@@ -1,0 +1,14 @@
+# OS
+.DS_Store
+Thumbs.db
+
+# IDEs
+.idea/
+validation-report.json
+validation-status.json
+js/tests/
+
+# Project
+/*.xml
+system/html/*
+_gh_pages/

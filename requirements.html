@@ -1,0 +1,52 @@
+---
+layout: standard
+title: "Requirements"
+slug: requirements
+---
+    <div class="container">
+        <h1>
+            <a href="#" class="history-back"><i class="icon-arrow-left-3 fg-darker smaller"></i></a>
+            Requirements
+        </h1>
+
+        <h3>Folder structure</h3>
+<pre class="prettyprint linenums">
+css
+  -- metro-bootstrap.css (required)
+  -- metro-bootstrap-responsive.css
+  -- iconFont.css
+fonts
+  -- iconFont.*
+  -- metroSysIcons.* (required)
+js
+  -- jquery.min.js (required)
+  -- jquery.widget.min.js (required)
+  -- jquery.mousewheel.js (required for mouse wheel support)
+  -- metro.min.js (required)
+
+index.html
+</pre>
+
+        <h3 id="_doctype">Doctype</h3>
+        <p class="description">
+            Metro UI CSS makes use of certain HTML elements and CSS properties that require the use of the HTML5 doctype.
+            Include it at the beginning of all your projects.
+        </p>
+<pre class="prettyprint linenums">
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+...
+&lt;/html&gt;
+</pre>
+
+        <h3 id="_javascript">Javascript</h3>
+        <p class="description">
+            All javascript plugins required <a href="http://jquery.com/">jQuery 2.0</a> or above and <a href="http://jqueryui.com/">jQuery UI widget factory</a> 1.9 or above.
+        </p>
+
+        <h3 id="_namespace">Namespace</h3>
+        <p class="description">
+            Metro UI CSS used self namespace <code>.metro</code>. You must add class <code>.metro</code> to main container.
+        </p>
+        <pre class="prettyprint linenums">&lt;body class="metro"&gt;...&lt;/body&gt;</pre>
+    </div>

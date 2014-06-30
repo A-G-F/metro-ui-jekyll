@@ -1,0 +1,11 @@
+{
+  "name": "metro-ui-jekyll",
+  "version": "2.0.31",
+  "main": ["./js/metro.min.js", "./js/start-screen.js", "./css/metro-bootstrap.css", "./css/metro-bootstrap-responsive.css", "./css/iconFont.css", "./fonts/*"],
+  "ignore": [
+      "**/.*"
+  ],
+  "dependencies": {
+    "jquery": ">= 1.9.0"
+  }
+}

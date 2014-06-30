@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+{% if page.slug != "start-screen" %}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+{% endif %}
+    <meta name="product" content="Metro UI CSS Framework">
+    <meta name="description" content="Simple responsive css framework">
+    <meta name="author" content="Sergey S. Pimenov, Ukraine, Kiev">
+
+    <link href="css/metro-bootstrap.min.css" rel="stylesheet">
+    <link href="css/metro-bootstrap-responsive.min.css" rel="stylesheet">
+    <link href="css/iconFont.min.css" rel="stylesheet">
+
+{% if page.slug == "test-page" %}
+    <style>
+        .grid .row [class*="span"] {padding: 20px; text-align: right}
+    </style>
+{% endif %}
+
+    <link href="css/docs.min.css" rel="stylesheet">
+    <link href="js/prettify/prettify.css" rel="stylesheet">
+
+    <!-- Load JavaScript Libraries -->
+    <script src="js/jquery/jquery.min.js"></script>
+    <script src="js/jquery/jquery.widget.min.js"></script>
+    <script src="js/jquery/jquery.mousewheel.js"></script>
+{% if page.slug == "tiles" %}
+    <script src="js/jquery/jquery.easing.1.3.min.js"></script>
+{% endif %}
+{% if page.slug == "dataTables" %}
+    <script src="js/jquery/jquery.dataTables.js"></script>
+{% endif %}
+    <script src="js/prettify/prettify.js"></script>
+{% if page.slug == "tiles" or page.slug == "images" or page.slug == "examples" %}
+    <script src="js/holder/holder.js"></script>
+{% endif %}
+
+    <!-- Metro UI CSS JavaScript plugins -->
+    <script src="js/metro.min.js"></script>
+
+    <!-- Local JavaScript -->
+    <script src="js/docs.js"></script>
+    <script src="js/github.info.js"></script><!-- not on test-page.html -->
+
+{% if page.slug == "datepicker" %}
+    <script>
+        METRO_LOCALE = 'en';
+    </script>
+{% endif %}
+{% if page.slug == "calendar" %}
+    <script>
+        METRO_LOCALE = 'en';
+        METRO_WEEK_START = 1;
+    </script>
+{% endif %}
+{% if page.slug == "start-screen" %}
+    <script src="js/start-screen.js"></script>
+{% endif %}
+
+    <title>Metro UI CSS : {{ page.title }}</title>
+</head>
+
+{% if page.slug == "index" %}
+<body class="metro" style="background-color: #efeae3">
+{% else %}
+<body class="metro">
+{% endif %}
+
+{% if page.slug != "start-screen" %}
+{% include header.html %}
+{% endif %}
+
+
+{{ content }}
+
+
+{% if page.slug != "homepage" and page.slug != "start-screen" %}
+{% include footer.html %}
+{% endif %}
+
+
+</body>
+</html>

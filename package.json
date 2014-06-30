@@ -1,0 +1,48 @@
+{
+    "name": "metro-ui-jekyll"
+  , "description": "A port of Metro UI CSS made for Jekyll"
+  , "version": "2.0.31"
+  , "keywords": ["metro-ui", "metro ui", "css", "jekyll"]
+  , "homepage": "http://a-g-f.github.com/metro-ui-jekyll/"
+  , "author": "A-G-F"
+  , "maintainers": [
+    {
+      "name": "Alfred G. Fischer",
+      "email": "info@a-g-f.com",
+      "web": "http://a-g-f.com/"
+    }
+  ]
+  , "scripts": { "test": "grunt test" }
+  , "repository": {
+      "type": "git"
+    , "url": "https://github.com/A-G-F/metro-ui-jekyll.git"
+  }
+  , "bugs": {
+      "url": "https://github.com/A-G-F/metro-ui-jekyll/issues"
+  }
+  , "licenses": [
+    {
+        "type": "MIT"
+      , "url": "http://opensource.org/licenses/MIT"
+    }
+  ]
+  , "bundledDependencies": [
+      "metro-ui-jekyll"
+  ]
+  , "devDependencies": {
+      "browserstack-runner": "~0.0.12"
+    , "btoa": "~1.1.1"
+    , "grunt": "~0.4.1"
+    , "grunt-contrib-clean": "~0.5.0"
+    , "grunt-contrib-concat": "~0.3.0"
+    , "grunt-contrib-connect": "~0.5.0"
+    , "grunt-contrib-copy": "~0.4.1"
+    , "grunt-contrib-jshint": "~0.7.0"
+    , "grunt-contrib-qunit": "~0.3.0"
+    , "grunt-contrib-uglify": "~0.2.4"
+    , "grunt-contrib-watch": "~0.5.3"
+    , "grunt-html-validation": "~0.1.6"
+    , "grunt-jekyll": "~0.4.0"
+    , "grunt-recess": "~0.4.0"
+  }
+}

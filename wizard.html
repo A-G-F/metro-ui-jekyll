@@ -1,0 +1,53 @@
+---
+layout: standard
+title: "Wizard"
+slug: wizard
+---
+    <div class="container">
+        <h1>
+            <a href="/"><i class="icon-arrow-left-3 fg-darker smaller"></i></a>
+            Wizard<small class="on-right">component</small>
+        </h1>
+
+        <div class="example">
+            <div class="wizard" id="wizard">
+                <div class="steps">
+                    <div class="step">Page 1</div>
+                    <div class="step">Page 2</div>
+                    <div class="step">Page 3</div>
+                </div>
+            </div>
+
+            <script>
+                $(function(){
+                    $('#wizard').wizard({
+                        locale: 'ru',
+                        onCancel: function(){
+                            $.Dialog({
+                                title: 'Wizard',
+                                content: 'Cancel button clicked',
+                                shadow: true,
+                                padding: 10
+                            });
+                        },
+                        onHelp: function(){
+                            $.Dialog({
+                                title: 'Wizard',
+                                content: 'Help button clicked',
+                                shadow: true,
+                                padding: 10
+                            });
+                        },
+                        onFinish: function(){
+                            $.Dialog({
+                                title: 'Wizard',
+                                content: 'Finish button clicked',
+                                shadow: true,
+                                padding: 10
+                            });
+                        }
+                    });
+                });
+            </script>
+        </div>
+    </div>

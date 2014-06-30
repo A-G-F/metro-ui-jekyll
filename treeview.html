@@ -1,0 +1,135 @@
+---
+layout: standard
+title: "Tree View"
+slug: treeview
+---
+    <div class="container">
+        <h1>
+            <a href="/"><i class="icon-arrow-left-3 fg-darker smaller"></i></a>
+            TreeView<small class="on-right">component</small>
+        </h1>
+
+        <div class="example">
+            <ul class="treeview" data-role="treeview">
+                <li class="node">
+
+                    <a href="#"><span class="node-toggle"></span>sergey@pimenov.com.ua</a>
+                    <ul>
+                        <li><a href="#">Inbox</a></li>
+                        <li><a href="#">Outbox</a></li>
+                        <li><a href="#">Drafts</a></li>
+                        <li><a href="#">Rss-channels</a></li>
+                        <li><a href="#">Trash <span class="value">[5]</span></a></li>
+                        <li class="node">
+
+                            <a href="#"><span class="node-toggle"></span>subnode</a>
+                            <ul>
+                                <li><a href="#">Inbox</a></li>
+                                <li><a href="#">Outbox</a></li>
+                                <li><a href="#">Drafts</a></li>
+                                <li><a href="#">Rss-channels</a></li>
+                                <li><a href="#">Trash</a></li>
+                                <li class="node">
+
+                                    <a href="#"><span class="node-toggle"></span>subnode 2</a>
+                                    <ul>
+                                        <li><a href="#">Inbox</a></li>
+                                        <li><a href="#">Outbox</a></li>
+                                        <li><a href="#">Drafts</a></li>
+                                        <li><a href="#">Rss-channels</a></li>
+                                        <li><a href="#">Trash</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li class="node">
+
+                    <a href="#"><span class="node-toggle"></span>support@metroui.net</a>
+                    <ul>
+                        <li><a href="#">Inbox</a></li>
+                        <li><a href="#">Outbox</a></li>
+                        <li><a href="#">Drafts</a></li>
+                        <li><a href="#">Rss-channels</a></li>
+                        <li><a href="#">Trash</a></li>
+                    </ul>
+                </li>
+                <li class="node collapsed">
+
+                    <a href="#"><span class="node-toggle"></span>info@metroui.net</a>
+                    <ul>
+                        <li><a href="#">Inbox</a></li>
+                        <li><a href="#">Outbox</a></li>
+                        <li><a href="#">Drafts</a></li>
+                        <li><a href="#">Rss-channels</a></li>
+                        <li><a href="#">Trash</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <p>
+            This component required <code>metro-treevew.js</code>
+        </p>
+<pre class="prettyprint linenums">
+&lt;ul class="treeview" data-role="treeview"&gt;
+    &lt;li class="node"&gt;
+        &lt;a href="#"&gt;&lt;span class="node-toggle"&gt;&lt;/span&gt;sergey@pimenov.com.ua&lt;/a&gt;
+        &lt;ul&gt;
+            &lt;li&gt;&lt;a href="#"&gt;Inbox&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#"&gt;Outbox&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#"&gt;Drafts&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#"&gt;Rss-channels&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#"&gt;Trash &lt;span class="value"&gt;[5]&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+            &lt;li class="node"&gt;
+                &lt;&lt;span class="node-toggle"&gt;&lt;/span&gt;a href="#"&gt;subnode&lt;/a&gt;
+                &lt;ul&gt;
+                    &lt;li&gt;&lt;a href="#"&gt;Inbox&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="#"&gt;Outbox&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="#"&gt;Drafts&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="#"&gt;Rss-channels&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="#"&gt;Trash&lt;/a&gt;&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/li&gt;
+
+    &lt;li class="node collapsed"&gt;
+        &lt;a href="#"&gt;&lt;span class="node-toggle"&gt;&lt;/span&gt;info@metroui.net&lt;/a&gt;
+        &lt;ul&gt;
+            &lt;li&gt;&lt;a href="#"&gt;Inbox&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#"&gt;Outbox&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#"&gt;Drafts&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#"&gt;Rss-channels&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#"&gt;Trash&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/li&gt;
+&lt;/ul&gt;
+</pre>
+
+        <h3>Events</h3>
+        <table class="table border">
+            <tr>
+                <td><strong>onNodeClick</strong></td>
+                <td>this event fired when user click on node</td>
+            </tr>
+            <tr>
+                <td><strong>onNodeCollapsed</strong></td>
+                <td>this event fired when node collapsed</td>
+            </tr>
+            <tr>
+                <td><strong>onNodeExpanded</strong></td>
+                <td>this event fired when node expanded</td>
+            </tr>
+        </table>
+<pre class="prettyprint linenums">
+$(function(){
+    $("#tree1").treeview({
+        onNodeClick: function(node){
+            console.log(node);
+        }
+    });
+});
+</pre>
+
+    </div>
