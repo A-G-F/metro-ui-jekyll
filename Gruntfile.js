@@ -122,7 +122,7 @@ module.exports = function(grunt) {
                 },
                 src: ['less/iconFont.less'],
                 dest: 'css/iconFont.min.css'
-            },
+            }/*,
             metro: {
                 src: ['less/metro-bootstrap.less'],
                 dest: 'dist/css/metro-bootstrap.css'
@@ -133,7 +133,7 @@ module.exports = function(grunt) {
                 },
                 src: ['less/metro-bootstrap.less'],
                 dest: 'css/metro-bootstrap.min.css'
-            }
+            }*/
         },
 
         copy: {
