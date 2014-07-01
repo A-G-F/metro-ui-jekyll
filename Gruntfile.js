@@ -211,7 +211,7 @@ module.exports = function(grunt) {
 
   // Docs HTML validation task
   grunt.registerTask('validate-html', ['jekyll', 'validation']);
-
+/*
   // Test task.
   var testSubtasks = ['dist-css', 'jshint', 'qunit', 'validate-html'];
   // Only run BrowserStack tests under Travis
@@ -222,7 +222,7 @@ module.exports = function(grunt) {
     }
   }
   grunt.registerTask('test', testSubtasks);
-
+*/
   // JS distribution task.
   grunt.registerTask('dist-js', ['concat', 'uglify']);
 
@@ -236,7 +236,7 @@ module.exports = function(grunt) {
   grunt.registerTask('dist', ['clean', 'dist-css', 'dist-fonts', 'dist-js']);
 
   // Default task.
-  grunt.registerTask('default', ['test', 'dist', 'build-customizer']);
+  grunt.registerTask('default', [/*'test', */'dist', 'build-customizer']);
 
   // task for building customizer
   grunt.registerTask('build-customizer', 'Add scripts/less files to customizer.', function () {
@@ -256,6 +256,6 @@ module.exports = function(grunt) {
     }
 
     var files = getFiles('js') + getFiles('less') + getFiles('fonts')
-    fs.writeFileSync('docs-assets/js/raw-files.js', files)
+    fs.writeFileSync('js/raw-files.js', files)
   });
 };
