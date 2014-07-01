@@ -4,6 +4,7 @@ Thumbs.db
 
 # IDEs
 .idea/
+node_modules/
 validation-report.json
 validation-status.json
 js/tests/
