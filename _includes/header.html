@@ -96,6 +96,7 @@
                         <a href="#" class="dropdown-toggle">Templates</a>
                         <ul class="dropdown-menu dark" data-role="dropdown">
                             <li><a href="test-page.html">Test Page</a></li>
+                            <li><a href="test-page2.html">Test Page 2</a></li>
                             <li><a href="start-screen.html">Start Screen</a></li>
                             <li><a href="template-news-portal.html">News Portal</a></li>
                         </ul>
@@ -168,7 +169,7 @@
                     </li>
                     {% else %}
                     <li>
-                        <a href="examples.html" class="fg-yellow">Examples</a>
+                        <a href="examples.html#" class="fg-yellow">Examples</a>
                     </li>
                     {% endif %}
                 </ul>
@@ -176,13 +177,13 @@
                 <div class="no-tablet-portrait no-phone">
                     <a title="Download" href="https://github.com/{{ site.ghauthor }}/{{ site.ghproject }}/archive/master.zip" class="element place-right"><span class="icon-box-add"></span></a>
                     <span class="element-divider place-right"></span>
+                    <div title="GitHub Forks" class="element place-right"><span class="icon-share-2"></span> <span class="github-forks">0</span></div>
+                    <span class="element-divider place-right"></span>
+                    <div title="GitHub Stars" class="element place-right"><span class="icon-star"></span> <span class="github-watchers">0</span></div>
+                    <span class="element-divider place-right"></span>
                     <a title="GitHub" href="https://github.com/{{ site.ghauthor }}/{{ site.ghproject }}" class="element place-right" target="_blank"><span class="icon-github"></span></a>
                     <span class="element-divider place-right"></span>
                     <a title="CSS3 validator" href="http://jigsaw.w3.org/css-validator/validator?uri={{ site.ghauthor }}.github.com/{{ site.ghproject }}&profile=css3&usermedium=all&warning=no&vextwarning=" class="element place-right" target="_blank"><span class="icon-css3"></span></a>
-                    <span class="element-divider place-right"></span>
-                    <div class="element place-right" title="GitHub Stars"><span class="icon-star"></span> <span class="github-watchers">0</span></div>
-                    <span class="element-divider place-right"></span>
-                    <div class="element place-right" title="GitHub Forks"><span class="icon-share-2"></span> <span class="github-forks">0</span></div>
                 </div>
             </div>
         </div>

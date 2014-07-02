@@ -92,6 +92,126 @@
   .container {
     width: 940px !important;
   }
+  .grid:not(.fluid) {
+    width: 100%;
+  }
+  .grid:not(.fluid) .row .span1 {
+    width: 6.382978% !important;
+  }
+  .grid:not(.fluid) .row .span2 {
+    width: 14.893614999999999% !important;
+  }
+  .grid:not(.fluid) .row .span3 {
+    width: 23.404251999999996% !important;
+  }
+  .grid:not(.fluid) .row .span4 {
+    width: 31.914889% !important;
+  }
+  .grid:not(.fluid) .row .span5 {
+    width: 40.425526% !important;
+  }
+  .grid:not(.fluid) .row .span6 {
+    width: 48.93616299999999% !important;
+  }
+  .grid:not(.fluid) .row .span7 {
+    width: 57.446799999999996% !important;
+  }
+  .grid:not(.fluid) .row .span8 {
+    width: 65.957437% !important;
+  }
+  .grid:not(.fluid) .row .span9 {
+    width: 74.468074% !important;
+  }
+  .grid:not(.fluid) .row .span10 {
+    width: 82.978711% !important;
+  }
+  .grid:not(.fluid) .row .span11 {
+    width: 91.48934799999999% !important;
+  }
+  .grid:not(.fluid) .row .span12 {
+    width: 99.99998499999998% !important;
+  }
+  .grid:not(.fluid) .row [class*="span"] {
+    margin-left: 2.127659%;
+  }
+  .grid:not(.fluid) .row [class*="span"]:first-child {
+    margin-left: 0;
+  }
+  .grid:not(.fluid) .row [class*="span"]:last-child {
+    margin-right: 0;
+  }
+  .grid:not(.fluid) .row .offset1 {
+    margin-left: 8.510637% !important;
+  }
+  .grid:not(.fluid) .row .offset1:not(:first-child) {
+    margin-left: 10.638296% !important;
+  }
+  .grid:not(.fluid) .row .offset2 {
+    margin-left: 17.021274% !important;
+  }
+  .grid:not(.fluid) .row .offset2:not(:first-child) {
+    margin-left: 19.148933% !important;
+  }
+  .grid:not(.fluid) .row .offset3 {
+    margin-left: 25.531910999999997% !important;
+  }
+  .grid:not(.fluid) .row .offset3:not(:first-child) {
+    margin-left: 27.659569999999995% !important;
+  }
+  .grid:not(.fluid) .row .offset4 {
+    margin-left: 34.042548% !important;
+  }
+  .grid:not(.fluid) .row .offset4:not(:first-child) {
+    margin-left: 36.170207% !important;
+  }
+  .grid:not(.fluid) .row .offset5 {
+    margin-left: 42.553185% !important;
+  }
+  .grid:not(.fluid) .row .offset5:not(:first-child) {
+    margin-left: 44.680844% !important;
+  }
+  .grid:not(.fluid) .row .offset6 {
+    margin-left: 51.063821999999995% !important;
+  }
+  .grid:not(.fluid) .row .offset6:not(:first-child) {
+    margin-left: 53.191480999999996% !important;
+  }
+  .grid:not(.fluid) .row .offset7 {
+    margin-left: 59.574459% !important;
+  }
+  .grid:not(.fluid) .row .offset7:not(:first-child) {
+    margin-left: 61.702118% !important;
+  }
+  .grid:not(.fluid) .row .offset8 {
+    margin-left: 68.085096% !important;
+  }
+  .grid:not(.fluid) .row .offset8:not(:first-child) {
+    margin-left: 70.212755% !important;
+  }
+  .grid:not(.fluid) .row .offset9 {
+    margin-left: 76.595733% !important;
+  }
+  .grid:not(.fluid) .row .offset9:not(:first-child) {
+    margin-left: 78.72339199999999% !important;
+  }
+  .grid:not(.fluid) .row .offset10 {
+    margin-left: 85.10637% !important;
+  }
+  .grid:not(.fluid) .row .offset10:not(:first-child) {
+    margin-left: 87.23402899999999% !important;
+  }
+  .grid:not(.fluid) .row .offset11 {
+    margin-left: 93.617007% !important;
+  }
+  .grid:not(.fluid) .row .offset11:not(:first-child) {
+    margin-left: 95.744666% !important;
+  }
+  .grid:not(.fluid) .row .offset12 {
+    margin-left: 102.12764399999999% !important;
+  }
+  .grid:not(.fluid) .row .offset12:not(:first-child) {
+    margin-left: 104.25530299999998% !important;
+  }
 }
 
 /* Large desktop */
