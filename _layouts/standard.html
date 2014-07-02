@@ -18,9 +18,10 @@
         .grid .row [class*="span"] {padding: 20px; text-align: right}
     </style>
 {% endif %}
-
+{% if page.slug != "template-news-portal" %}
     <link href="css/docs.min.css" rel="stylesheet">
     <link href="js/prettify/prettify.css" rel="stylesheet">
+{% endif %}
 
     <!-- Load JavaScript Libraries -->
     <script src="js/jquery/jquery.min.js"></script>
@@ -33,16 +34,17 @@
     <script src="js/jquery/jquery.dataTables.js"></script>
 {% endif %}
     <script src="js/prettify/prettify.js"></script>
-{% if page.slug == "tiles" or page.slug == "images" or page.slug == "examples" %}
+{% if page.slug == "tiles" or page.slug == "images" or page.slug == "examples" or page.slug == "template-news-portal" %}
     <script src="js/holder/holder.js"></script>
 {% endif %}
 
     <!-- Metro UI CSS JavaScript plugins -->
     <script src="js/metro.min.js"></script>
-
+{% if page.slug != "template-news-portal" %}
     <!-- Local JavaScript -->
     <script src="js/docs.js"></script>
-    <script src="js/github.info.js"></script><!-- not on test-page.html -->
+    <script src="js/github.info.js"></script>
+{% endif %}
 
 {% if page.slug == "datepicker" %}
     <script>
@@ -68,7 +70,7 @@
 <body class="metro">
 {% endif %}
 
-{% if page.slug != "start-screen" %}
+{% if page.slug != "start-screen" and page.slug != "template-news-portal" %}
 {% include header.html %}
 {% endif %}
 
@@ -76,7 +78,7 @@
 {{ content }}
 
 
-{% if page.slug != "homepage" and page.slug != "start-screen" %}
+{% if page.slug != "index" and page.slug != "start-screen" %}
 {% include footer.html %}
 {% endif %}
 

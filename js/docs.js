@@ -1,11 +1,3 @@
-/*!
- * Metro UI 4 Jekyll v2.0.31 (http://a-g-f.github.com/metro-ui-jekyll/)
- * A port of Metro UI CSS made for Jekyll maintained by Alfred G. Fischer
- * Metro UI CSS Copyright 2012-2014 Sergey Pimenov
- * Metro UI 4 Jekyll Copyright 2014 Alfred G. Fischer
- * Both licensed under http://opensource.org/licenses/MIT
- */
-
 $(function(){
     $("[data-load]").each(function(){
         $(this).load($(this).data("load"), function(){
