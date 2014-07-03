@@ -51,20 +51,20 @@
 }
 
 // Columns
-.column-gap (@gap) {
+.column-gap (@gap) {/* TODO: browser prefixes break Grunt
     -moz-column-gap: @gap;
     -webkit-column-gap: @gap;
     -o-column-gap: @gap;
-    -ms-column-gap: @gap;
+    -ms-column-gap: @gap;*/
     column-gap: @gap;
 }
 
-.columns (@columns) {
-    -moz-columns: @columns;
-    -webkit-columns: @columns;
-    -o-columns: @columns;
-    -ms-columns: @columns;
-    columns: @columns;
+.columns (@colums) {/* TODO: browser prefixes break Grunt
+    -moz-columns: @colums;
+    -webkit-columns: @colums;
+    -o-columns: @colums;
+    -ms-columns: @colums;*/
+    columns: @colums;
     .column-gap(@unitSize);
 }
 

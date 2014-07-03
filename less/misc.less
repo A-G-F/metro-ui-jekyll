@@ -1,17 +1,17 @@
 .example {
     .clearfix;
-    padding: 20px 40px 20px 60px;
+    padding: 40px 40px 20px 50px;
     border: 1px #ccc solid;
     position: relative;
     margin: 0 0 10px 0;
-    background-color: lighten(@gray, 66%) !important;
-    min-height: 100px;
+    background-color: @grayLighter !important;
+    min-height: 140px;
 
     &:before {
         position: absolute;
         content: "example";
         left: -21px;
-        top: 30px;
+        top: 60px;
         //background: @grayLighter;
         color: @grayLight !important;
         //padding: 5px 10px;
@@ -29,7 +29,7 @@ code, .code {
     margin: 0;
     background-color: @grayLighter;
     color: @red;
-    border: 1px lighten(@gray, 50%) solid;
+    border: 1px @grayLight solid;
     font-size: 90%;
     line-height: 90%;
 }

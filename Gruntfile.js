@@ -3,12 +3,13 @@
 module.exports = function(grunt) {
     "use strict";
 
-    var btoa = require('btoa')
+    var btoa = require('btoa');
     // Project configuration.
     grunt.initConfig({
 
         // Metadata.
         pkg: grunt.file.readJSON('package.json'),
+
         banner: '/*!\n' +
             ' * Metro UI 4 Jekyll v<%= pkg.version %> (<%= pkg.homepage %>)\n' +
             ' * <%= pkg.description %> maintained by Alfred G. Fischer\n' +
@@ -16,7 +17,8 @@ module.exports = function(grunt) {
             ' * Metro UI 4 Jekyll Copyright 2014 Alfred G. Fischer\n' +
             ' * Both licensed under <%= _.pluck(pkg.licenses, "url").join(", ") %>\n' +
             ' */\n\n',
-        jqueryCheck: 'if (typeof jQuery === "undefined") { throw new Error("Bootstrap requires jQuery") }\n\n',
+
+        jqueryCheck: 'if (typeof jQuery === "undefined") { throw new Error("Metro UI 4 Jekyll requires jQuery") }\n\n',
 
         // Task configuration.
         clean: {
@@ -105,7 +107,7 @@ module.exports = function(grunt) {
                 src: ['less/metro-bootstrap-responsive.less'],
                 dest: 'dist/css/metro-bootstrap-responsive.css'
             },
-            jresponsive_min: {
+            responsive_min: {
                 options: {
                     compress: true
                 },
@@ -122,6 +124,20 @@ module.exports = function(grunt) {
                 },
                 src: ['less/iconFont.less'],
                 dest: 'css/iconFont.min.css'
+<<<<<<< HEAD
+=======
+            },/*
+            docs: {
+                src: ['less/docs.less'],
+                dest: 'css/docs.css'
+            },*/
+            docs_min: {
+                options: {
+                    compress: true
+                },
+                src: ['less/docs.less'],
+                dest: 'css/docs.min.css'
+>>>>>>> master
             },
             metro: {
                 src: ['less/metro-bootstrap.less'],
@@ -233,17 +249,17 @@ module.exports = function(grunt) {
   grunt.registerTask('dist-fonts', ['copy']);
 
   // Full distribution task.
-  grunt.registerTask('dist', ['clean', 'dist-css', 'dist-fonts', 'dist-js']);
+  grunt.registerTask('dist', [/*'clean', */'dist-css', 'dist-fonts', 'dist-js']);
 
   // Default task.
   grunt.registerTask('default', [/*'test', */'dist', 'build-customizer']);
 
   // task for building customizer
   grunt.registerTask('build-customizer', 'Add scripts/less files to customizer.', function () {
-    var fs = require('fs')
+    var fs = require('fs');
 
     function getFiles(type) {
-      var files = {}
+      var files = {};
       fs.readdirSync(type)
         .filter(function (path) {
           return type == 'fonts' ? true : new RegExp('\\.' + type + '$').test(path)
@@ -251,11 +267,11 @@ module.exports = function(grunt) {
         .forEach(function (path) {
           var fullPath = type + '/' + path
           return files[path] = (type == 'fonts' ? btoa(fs.readFileSync(fullPath)) : fs.readFileSync(fullPath, 'utf8'))
-        })
+        });
       return 'var __' + type + ' = ' + JSON.stringify(files) + '\n'
     }
 
-    var files = getFiles('js') + getFiles('less') + getFiles('fonts')
+    var files = getFiles('js') + getFiles('less') + getFiles('fonts');
     fs.writeFileSync('js/raw-files.js', files)
   });
 };

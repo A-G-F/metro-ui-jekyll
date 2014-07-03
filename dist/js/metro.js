@@ -6,7 +6,7 @@
  * Both licensed under http://opensource.org/licenses/MIT
  */
 
-if (typeof jQuery === "undefined") { throw new Error("Bootstrap requires jQuery") }
+if (typeof jQuery === "undefined") { throw new Error("Metro UI 4 Jekyll requires jQuery") }
 
 var METRO_AUTO_REINIT;
 var METRO_LOCALE;
