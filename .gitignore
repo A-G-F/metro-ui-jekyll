@@ -11,6 +11,5 @@ js/tests/
 
 # Project
 /*.xml
-system/html/*
+*.zip
 _gh_pages/
-test-page2.html
