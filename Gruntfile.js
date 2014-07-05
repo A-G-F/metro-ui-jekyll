@@ -135,7 +135,7 @@ module.exports = function(grunt) {
                 },
                 src: ['less/docs.less'],
                 dest: 'css/docs.min.css'
-            },
+            }/*,
             metro: {
                 src: ['less/metro-bootstrap.less'],
                 dest: 'dist/css/metro-bootstrap.css'
@@ -146,7 +146,7 @@ module.exports = function(grunt) {
                 },
                 src: ['less/metro-bootstrap.less'],
                 dest: 'css/metro-bootstrap.min.css'
-            }
+            }*/
         },
 
         copy: {
