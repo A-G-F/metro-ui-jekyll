@@ -108,6 +108,10 @@
     .columns(5);
 }
 
+.one-column, .two-columns, .three-columns, .four-columns, .five-columns {
+    .column-gap (@unitSize);
+}
+
 .square5 {.square(@subunitSize)};
 .square10 {.square(@subunitSize * 2)};
 .square15 {.square(@subunitSize * 3)};
