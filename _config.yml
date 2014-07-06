@@ -2,8 +2,7 @@
 destination:      ./_gh_pages
 exclude:          [".idea", ".editorconfig", ".gitignore", "bower.json", "composer.json", "CONTRIBUTING.md", "CNAME", "LICENSE",
                   "Gruntfile.js", "package.json", "node_modules", "README.md", "dist", "less", "metro",
-                  "tests", "raw-files.js", "validation-report.json", "validation-status.json",
-                  "docs.css", "iconFont.css", "metro-bootstrap.css", "metro-bootstrap-responsive.css"]
+                  "tests", "raw-files.js", "validation-report.json", "validation-status.json"]
 host:             0.0.0.0
 port:             4000
 baseurl:          ""
