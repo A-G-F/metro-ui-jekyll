@@ -18,13 +18,12 @@
 .set-ol-color (@color: transparent){outline-color: @color !important;}
 .set-bd-color (@color: transparent){border-color: @color !important;}
 
-.ribbed(@color: @white, @angle: -45deg, @size: 40px) {
-    background-color: @color !important;
-    background-image: -webkit-linear-gradient(@angle, rgba(255,255,255,.15) 25%, transparent 25%, transparent 50%, rgba(255,255,255,.15) 50%, rgba(255,255,255,.15) 75%, transparent 75%, transparent);
-    background-image: -moz-linear-gradient(@angle, rgba(255,255,255,.15) 25%, transparent 25%, transparent 50%, rgba(255,255,255,.15) 50%, rgba(255,255,255,.15) 75%, transparent 75%, transparent);
-    background-image: -ms-linear-gradient(@angle, rgba(255,255,255,.15) 25%, transparent 25%, transparent 50%, rgba(255,255,255,.15) 50%, rgba(255,255,255,.15) 75%, transparent 75%, transparent);
-    background-image: -o-linear-gradient(@angle, rgba(255,255,255,.15) 25%, transparent 25%, transparent 50%, rgba(255,255,255,.15) 50%, rgba(255,255,255,.15) 75%, transparent 75%, transparent);
-    background-image: linear-gradient(@angle, rgba(255,255,255,.15) 25%, transparent 25%, transparent 50%, rgba(255,255,255,.15) 50%, rgba(255,255,255,.15) 75%, transparent 75%, transparent);
+.ribbed-grad(@color: rgba(255,255,255,.15), @angle: -45deg, @size: 40px) {
+    background-image: -webkit-linear-gradient(@angle, @color 25%, transparent 25%, transparent 50%, @color 50%, @color 75%, transparent 75%, transparent);
+    background-image: -moz-linear-gradient(@angle, @color 25%, transparent 25%, transparent 50%, @color 50%, @color 75%, transparent 75%, transparent);
+    background-image: -ms-linear-gradient(@angle, @color 25%, transparent 25%, transparent 50%, @color 50%, @color 75%, transparent 75%, transparent);
+    background-image: -o-linear-gradient(@angle, @color 25%, transparent 25%, transparent 50%, @color 50%, @color 75%, transparent 75%, transparent);
+    background-image: linear-gradient(@angle, @color 25%, transparent 25%, transparent 50%, @color 50%, @color 75%, transparent 75%, transparent);
     background-size: @size @size;
 }
 
@@ -51,19 +50,19 @@
 }
 
 // Columns
-.column-gap (@gap) {/* TODO: browser prefixes break Grunt */
-    -moz-column-gap: @gap;
+.column-gap (@gap) {
     -webkit-column-gap: @gap;
-    -o-column-gap: @gap;
+     -moz-column-gap: @gap;
     -ms-column-gap: @gap;
+    -o-column-gap: @gap;
     column-gap: @gap;
 }
 
-.columns (@colums) {/* TODO: browser prefixes break Grunt */
-    -moz-columns: @colums;
+.columns (@colums) {
     -webkit-columns: @colums;
-    -o-columns: @colums;
+     -moz-columns: @colums;
     -ms-columns: @colums;
+     -o-columns: @colums;
     columns: @colums;
 }
 
