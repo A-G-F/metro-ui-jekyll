@@ -124,8 +124,6 @@ module.exports = function(grunt) {
                 },
                 src: ['less/iconFont.less'],
                 dest: 'css/iconFont.min.css'
-<<<<<<< HEAD
-=======
             },/*
             docs: {
                 src: ['less/docs.less'],
@@ -137,16 +135,7 @@ module.exports = function(grunt) {
                 },
                 src: ['less/docs.less'],
                 dest: 'css/docs.min.css'
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> master
             },
-=======
-            }/*,
->>>>>>> master
-=======
-            },
->>>>>>> master
             metro: {
                 src: ['less/metro-bootstrap.less'],
                 dest: 'dist/css/metro-bootstrap.css'

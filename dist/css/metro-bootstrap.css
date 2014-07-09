@@ -427,8 +427,6 @@ a {
 }
 
 .one-column {
-  /* TODO: browser prefixes break Grunt */
-
   -webkit-columns: 1;
      -moz-columns: 1;
       -ms-columns: 1;
@@ -437,8 +435,6 @@ a {
 }
 
 .two-columns {
-  /* TODO: browser prefixes break Grunt */
-
   -webkit-columns: 2;
      -moz-columns: 2;
       -ms-columns: 2;
@@ -447,8 +443,6 @@ a {
 }
 
 .three-columns {
-  /* TODO: browser prefixes break Grunt */
-
   -webkit-columns: 3;
      -moz-columns: 3;
       -ms-columns: 3;
@@ -457,8 +451,6 @@ a {
 }
 
 .four-columns {
-  /* TODO: browser prefixes break Grunt */
-
   -webkit-columns: 4;
      -moz-columns: 4;
       -ms-columns: 4;
@@ -467,8 +459,6 @@ a {
 }
 
 .five-columns {
-  /* TODO: browser prefixes break Grunt */
-
   -webkit-columns: 5;
      -moz-columns: 5;
       -ms-columns: 5;
@@ -481,8 +471,6 @@ a {
 .three-columns,
 .four-columns,
 .five-columns {
-  /* TODO: browser prefixes break Grunt */
-
   -webkit-column-gap: 20px;
      -moz-column-gap: 20px;
       -ms-column-gap: 20px;
@@ -2977,10 +2965,11 @@ label {
 .input-control.text,
 .input-control.password,
 .input-control.select,
-.input-control.textarea {
+.input-control.textarea,
+.input-control.file {
   position: relative;
   display: inline-block;
-  margin-bottom: 7pt;
+  margin-bottom: 7px;
   cursor: pointer;
 }
 
