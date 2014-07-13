@@ -29,9 +29,9 @@ slug: buttons
 
                         <div class="span9">
                             <p class="description">
-                                With the Metro UI CSS you can easily create different types of buttons, stylized to Windows 8.
-                                Button styles can be applied to anything with the <code>.button</code> class applied.
-                                However, typically you'll want to apply these to only <code>&lt;a&gt;</code> and <code>&lt;button&gt;</code> elements for the best rendering.
+                                With Metro UI 4 Jekyll you can easily create different types of buttons, stylized to Windows 8.
+                                Button styles can be applied to anything with class <code>.button</code> applied.
+                                Typically, you'll want to apply these to only <code>&lt;a&gt;</code> and <code>&lt;button&gt;</code> elements.
                             </p>
 
                             <h2 id="_push"><i class="icon-accessibility on-left"></i>Push button</h2>
@@ -46,7 +46,7 @@ slug: buttons
 &lt;a class="button"&gt;Button&lt;/a&gt;
 </pre>
                             <p class="description">
-                                To change size of button you can use build-in classes: <code>large</code>, <code>small</code> and <code>mini</code>.
+                                To change button size use built-in classes: <code>large</code>, <code>small</code> and <code>mini</code>.
                             </p>
 <pre class="prettyprint linenums">
 &lt;button&gt;Button&lt;/button&gt;
@@ -57,7 +57,7 @@ slug: buttons
 </pre>
 
                             <p class="description">
-                                For additional styling button you can use predefined button subclasses: <code>.default</code>, <code>.primary</code>, <code>.info</code>, <code>.success</code>, <code>.warning</code>, <code>.danger</code>, <code>.inverse</code> and <code>.link</code> or
+                                For additional styling use predefined button subclasses: <code>.default</code>, <code>.primary</code>, <code>.info</code>, <code>.success</code>, <code>.warning</code>, <code>.danger</code>, <code>.inverse</code> and <code>.link</code> or
                                 build-in color classes for background and foreground.
                             </p>
                             <div class="example">
@@ -75,7 +75,7 @@ slug: buttons
 &lt;button class="bg-darkRed fg-white"&gt;Button&lt;/button&gt;
 </pre>
                             <p class="description">
-                                Also you can add icon to button with tag <code>&lt;i&gt;</code> and class <code>icon-*</code>.
+                                Add icons to button with tag <code>&lt;i&gt;</code> and class <code>icon-*</code>.
                             </p>
                             <div class="example">
                                 <button class="button"><i class="icon-rocket on-left"></i>Rocket</button>
@@ -116,7 +116,7 @@ slug: buttons
 &lt;/button&gt;
 </pre>
                             <p class="description">
-                                For additional styling button you can use predefined button subclasses: <code>.default</code>, <code>.primary</code>, <code>.info</code>, <code>.success</code>, <code>.warning</code>, <code>.danger</code>, <code>.inverse</code> and <code>.link</code> or
+                                For additional styling use predefined button subclasses: <code>.default</code>, <code>.primary</code>, <code>.info</code>, <code>.success</code>, <code>.warning</code>, <code>.danger</code>, <code>.inverse</code> and <code>.link</code> or
                                 build-in color classes for background and foreground.
                             </p>
                             <div class="example">
@@ -280,7 +280,7 @@ slug: buttons
                             <div class="example">
                                 <button class="image-button primary">
                                     Download
-                                    <img src="images/download-32.png" class="bg-cobalt">
+                                    <img src="{{ site.baseurl }}images/download-32.png" class="bg-cobalt">
                                 </button>
                                 <button class="image-button danger">
                                     GitHub
@@ -292,7 +292,7 @@ slug: buttons
                                 </button>
                                 <button class="image-button warning image-left">
                                     Fork
-                                    <img src="images/fork-32.png" class="bg-cobalt">
+                                    <img src="{{ site.baseurl }}images/fork-32.png" class="bg-cobalt">
                                 </button>
                             </div>
 <pre class="prettyprint linenums">
@@ -338,7 +338,7 @@ slug: buttons
 &lt;/button&gt;
 </pre>
                             <p class="description">
-                                Also you can use build-in classes for button to additional quick styling:
+                                Add built-in classes for quick styling:
                                 <code>.primary</code>, <code>.info</code>, <code>.success</code>,
                                 <code>.warning</code>, <code>.danger</code>, <code>.inverse</code>, <code>.link</code>.
                             </p>
@@ -362,7 +362,7 @@ slug: buttons
 
                             <h2 id="_dropdown-btn"><i class="icon-accessibility on-left"></i>Button Dropdown</h2>
                             <p class="description">
-                                Button dropdown required <code>metro-dropdown.js</code> widget.
+                                Dropdown buttons require <code>metro-dropdown.js</code> widget.
                             </p>
                             <div class="example">
                                 <div class="button-dropdown place-right">
@@ -430,7 +430,7 @@ slug: buttons
 &lt;/div&gt;
 </pre>
                             <p class="description">
-                                You can change button color with build in classes.
+                                You can change button color with built in classes.
                             </p>
                             <div class="example">
                                 <div class="button-dropdown">
@@ -481,7 +481,7 @@ slug: buttons
 
                             <h2 id="_pagination"><i class="icon-accessibility on-left"></i>Pagination</h2>
                             <p class="description">
-                                Metro UI CSS provides pagination buttons.
+                                Metro UI 4 Jekyll provides pagination buttons.
                             </p>
                             <div class="example">
                                 <div class="pagination">
@@ -551,7 +551,7 @@ slug: buttons
 
                             <h2 id="_set"><i class="icon-accessibility on-left"></i>Button Set</h2>
                             <p>
-                                This component required <code>metro-button-set.js</code>.
+                                This component requires <code>metro-button-set.js</code>.
                             </p>
                             <div class="example">
                                 <div class="button-set" data-role="button-set">
@@ -579,7 +579,7 @@ slug: buttons
 <pre class="prettyprint linenums">
 &lt;div class="button-set" data-role="button-set"&gt;...&lt;/div&gt;
 </pre>
-                            <h4>Activate with manually javascript</h4>
+                            <h4>Activate manually with javascript</h4>
 <pre class="prettyprint linenums">
 $("#component_id").buttonset();
 </pre>
@@ -600,7 +600,7 @@ $("#component_id").buttonset().bind("buttonsetclick", function(event, btn, on){.
 
                             <h2 id="_grp"><i class="icon-accessibility on-left"></i>Button Group</h2>
                             <p>
-                                This component required <code>metro-button-set.js</code>.
+                                This component requires <code>metro-button-set.js</code>.
                             </p>
                             <div class="example">
                                 <div class="button-set" data-role="button-group">
@@ -628,13 +628,13 @@ $("#component_id").buttonset().bind("buttonsetclick", function(event, btn, on){.
 <pre class="prettyprint linenums">
 &lt;div class="button-set" data-role="button-group"&gt;...&lt;/div&gt;
 </pre>
-                            <h4>Activate with manually javascript</h4>
+                            <h4>Activate manually with javascript</h4>
 <pre class="prettyprint linenums">
 $("#component_id").buttongroup();
 </pre>
                             <p>
-                                When user press button, component fired event <code>click</code>.
-                                You can set handler for this event.
+                                When button is clicked, component fires event <code>click</code>.
+                                You can set a handler for this event.
                             </p>
 <pre class="prettyprint linenums">
 $("#component_id").buttongroup({

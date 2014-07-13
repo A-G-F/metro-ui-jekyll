@@ -296,7 +296,7 @@ slug: forms
 &lt;/div&gt;
 </pre>
                             <p class="description">
-                                Metro UI CSS also supported one style for all types of input controls, such as <code>tel</code>, <code>email</code>, <code>url</code>, ...
+                                Metro UI 4 Jekyll also supports style for all types of input controls, such as <code>tel</code>, <code>email</code>, <code>url</code>, ...
                             </p>
 
                             <h3>Input password</h3>
@@ -370,7 +370,7 @@ slug: forms
 
                             <h3>Input with sizeN class</h3>
                             <p class="description">
-                                Use <code>.size1</code> to <code>.size12</code> for <code>.input-control</code> that match the same sizes of the grid columns.
+                                Use <code>.size1</code> to <code>.size12</code> for <code>.input-control</code> to match the size of grid columns.
                             </p>
                             <div class="example">
                                 <form class="clearfix">
@@ -432,7 +432,7 @@ slug: forms
                             <h3 id="_validation">Input validation states</h3>
                             <p class="description">
                                 You can set validation state for input with build-in classes as additional class for <code>.input-control</code>: <code>.warning-state</code>, <code>.error-state</code>, <code>.info-state</code>, <code>.success-state</code>.
-                                <br>Also, you can set <code>data-state</code> attribute for <code>input</code>, <code>select</code> or <code>textarea</code> with next values: <code>warning</code>, <code>error</code>, <code>info</code> and <code>success</code>.
+                                <br>Also, you can set <code>data-state</code> attribute for <code>input</code>, <code>select</code> or <code>textarea</code> with these values: <code>warning</code>, <code>error</code>, <code>info</code> and <code>success</code>.
                             </p>
                             <div class="example">
                                 <form>
@@ -552,18 +552,17 @@ slug: forms
 
                             <h2 id="_plugin">Input control plugin</h2>
                             <p class="description">
-                                Input control plugin <code>metro-input-control.js</code> provides functionality for clearing inputs, show password and input file.
+                                The input control plugin <code>metro-input-control.js</code> provides functionality for clearing inputs, show password and input file.
                             </p>
 
                             <h2 id="_transform">Input Auto Transform</h2>
                             <p class="description">
-                                Now input control plugin contains widget for form input <strong>auto</strong> transformation.
+                                Input control plugin contains widget for form input <strong>auto</strong> transformation.
                             </p>
 <pre class="prettyprint linenums">
-from:
-&lt;input type="file" data-transform="input-control" /&gt;
+&lt;input type="file" data-transform="input-control"&gt;
 
-to:
+transforms to:
 &lt;div class="input-control file"&gt;
     &lt;input type="file" /&gt;
     &lt;button class="btn-file"&gt;&lt;/button&gt;

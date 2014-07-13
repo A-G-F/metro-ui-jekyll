@@ -4,13 +4,13 @@ Metro UI 4 Jekyll is a port of [Metro UI CSS](http://metroui.org.ua) to create a
 
 ## Current Version
 
-### 2.0.31
+### 2.0.31 <!--will follow Metro UI CSS releases we build on-->
 
 See details of definition on [metroui.org.ua](http://metroui.org.ua)
 
 ## Documentation
 
-Metro UI 4 Jekyll documentation, included in this repo in the root directory, is built with [Jekyll](http://jekyllrb.com) and publicly hosted on GitHub Pages at <http://a-g-f.github.io/metro-ui-jekyll>. The docs may also be run locally.
+Metro UI 4 Jekyll documentation, included in this repo in the root directory, is built and served with [Jekyll](http://jekyllrb.com) and publicly hosted on GitHub Pages at <http://a-g-f.github.io/metro-ui-jekyll>. The docs may also be run locally.
 
 ### Running documentation locally
 
@@ -20,13 +20,14 @@ Metro UI 4 Jekyll documentation, included in this repo in the root directory, is
 3. Open <http://localhost:4000> in your browser, and voilà.
 
 Learn more about using Jekyll by reading its [documentation](http://jekyllrb.com/docs/home/).
-
-
-
+  
+  
+  
+  
 
 ## Compiling CSS and JavaScript
 
-Metro UI 4 Jekyll uses [Grunt](http://gruntjs.com/) with convenient methods for working with the framework. It's how we compile our code, run tests, and more. To use it, install the required dependencies as directed and then run some Grunt commands.
+Metro UI 4 Jekyll uses [Grunt](http://gruntjs.com/) with convenient methods for working with the framework. It's how we compile our code, run tests, and more. To use it, install the required dependencies as directed and then run desired Grunt commands.
 
 ### Install Grunt
 
@@ -38,8 +39,12 @@ From the command line:
 When completed, you'll be able to run the various Grunt commands provided from the command line.
 
 **Unfamiliar with `npm`? Don't have node installed?** That's a-okay. npm stands for [node packaged modules](http://npmjs.org/) and is a way to manage development dependencies through node.js. [Download and install node.js](http://nodejs.org/download/) before proceeding.
-
-### Available Grunt commands
+  
+    
+  
+  
+  
+### Available Grunt commands:
 
 #### Build - `grunt`
 Run `grunt` to run tests locally and compile the CSS and JavaScript into `/dist`. **Uses [recess](http://twitter.github.io/recess/) and [UglifyJS](http://lisperator.net/uglifyjs/).**
@@ -56,19 +61,13 @@ This is a convenience method for watching just Less files and automatically buil
 ### Troubleshooting dependencies
 
 Should you encounter problems with installing dependencies or running Grunt commands, uninstall all previous dependency versions (global and local). Then, rerun `npm install`.
-
-
-
-
-#### NuGet
-
-Now you can use [NuGet package](https://www.nuget.org/packages/Metro.UI.CSS/).
-To install Metro UI CSS 2.0, run the following command in the Package Manager Console:
-__PM> Install-Package Metro.UI.CSS__
+  
+  
+  
 
 ### Credits
 
-- Metro UI CSS now is a Microsoft BizSpark Startup.
+- Metro UI 4 Jekyll is built on [Metro UI CSS](http://metroui.org.ua).
 - Normalize.css is a project by Nicolas Gallagher and Jonathan Neal.
 - Styles created using the [less](http://lesscss.org) preprocessor
 

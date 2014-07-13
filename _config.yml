@@ -5,13 +5,14 @@ exclude:          [".idea", ".editorconfig", ".gitignore", "bower.json", "compos
                   "tests", "raw-files.js", "validation-report.json", "validation-status.json"]
 host:             0.0.0.0
 port:             4000
-baseurl:          ""
+baseurl:          "/"
 
 # Custom vars
 current_version:  2.0.31
 
 ghauthor:         "A-G-F"
 ghproject:        "metro-ui-jekyll"
+ghname:           "Metro UI 4 Jekyll"
 
 defaults:
   -

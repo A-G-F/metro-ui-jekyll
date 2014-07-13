@@ -8,8 +8,8 @@ slug: times
                     <a href="#" class="history-back"><i class="icon-arrow-left-3 fg-darker smaller"></i></a>
                     Times<small class="on-right">widgets</small>
                 </h1>
-                <p class="bg-grayLighter padding20 tertiary-text">
-                    This widgets based on <a href="http://tutorialzine.com/2011/12/countdown-jquery/">jQuery Countdown Plugin</a> of Martin Angelov.
+                <p class="padding20 bg-grayLighter">
+                    This widgets is based on <a href="http://tutorialzine.com/2011/12/countdown-jquery/" target="_blank">jQuery Countdown Plugin</a> from Martin Angelov. It requires <code>metro-countdown.js</code>.
                 </p>
 
                 <h2>Countdown</h2>
@@ -17,23 +17,15 @@ slug: times
                     <div class="countdown" data-role="countdown" data-blink="false" style="font-size: 40px;"></div>
                     <div class="countdown inverse" data-role="countdown"></div>
                     <div class="countdown" data-role="countdown" data-style-background="bg-lightBlue"></div>
-                    <div class="countdown" data-role="countdown" data-style-background="bg-teal" data-style-foreground="fg-yellow"></div>
+                    <div class="countdown" data-role="countdown" data-style-background="bg-teal" data-style-foreground="fg-yellow" data-style-divider="fg-red"></div>
                 </div>
-                <br>
-                <p class="description">
-                    This widget require <code>metro-countdown.js</code>.
-                </p>
-                <h3>Definition</h3>
+
 <pre class="prettyprint linenums">
-&lt;div class="countdown" data-role="countdown"
-    data-blink="false" style="font-size: 20px"&gt;&lt;/div&gt;
+&lt;div class="countdown" data-role="countdown" data-blink="false" style="font-size: 20px"&gt;&lt;/div&gt;
 &lt;div class="countdown inverse" data-role="countdown"&gt;&lt;/div&gt;
-&lt;div class="countdown" data-role="countdown"
-    data-style-background="bg-lightBlue"&gt;&lt;/div&gt;
-&lt;div class="countdown" data-role="countdown"
-    data-style-background="bg-teal" data-style-foreground="fg-yellow"&gt;&lt;/div&gt;
-&lt;div class="countdown" data-role="countdown"
-    data-style-divider="fg-red"&gt;&lt;/div&gt;
+&lt;div class="countdown" data-role="countdown" data-style-background="bg-lightBlue"&gt;&lt;/div&gt;
+&lt;div class="countdown" data-role="countdown" data-style-background="bg-teal" data-style-foreground="fg-yellow"&gt;&lt;/div&gt;
+&lt;div class="countdown" data-role="countdown" data-style-divider="fg-red"&gt;&lt;/div&gt;
 </pre>
                 <p class="description">
                     You can activate widget manually or auto with <code>data-*</code> api.

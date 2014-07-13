@@ -10,7 +10,7 @@ slug: images
                 </h1>
 
                 <h3>General</h3>
-                <p>Add classes to an <code>&lt;img&gt;</code> element to easily style images in any project.</p>
+                <p>Add classes to <code>&lt;img&gt;</code> elements to style images.</p>
                 <div class="example">
                     <img src="js/holder/holder.js/120x120" class="rounded">
                     <img src="js/holder/holder.js/120x120" class="cycle">
@@ -28,7 +28,7 @@ slug: images
 &lt;img src="..." class="shadow"&gt;
 </pre>
                 <h4>Border color</h4>
-                <p>You can change border color with build-in classes <code>bd-*</code></p>
+                <p>Change border color with built-in classes <code>bd-*</code></p>
                 <div class="example">
                     <img src="js/holder/holder.js/120x120" class="rounded bd-amber">
                     <img src="js/holder/holder.js/120x120" class="cycle bd-cobalt">
@@ -43,7 +43,7 @@ slug: images
 </pre>
 
                 <h4>Background color</h4>
-                <p>You can change background color for polaroid style with build-in classes <code>bg-*</code></p>
+                <p>Change background color for polaroid style with built-in classes <code>bg-*</code></p>
                 <div class="example">
                     <img src="js/holder/holder.js/120x120" class="polaroid bg-cobalt">
                     <img src="js/holder/holder.js/120x120" class="polaroid bg-red">
@@ -57,11 +57,11 @@ slug: images
 </pre>
 
                 <h4>Image size</h4>
-                <p>Also you can set width of image with <code>&lt;span1&gt;...&lt;span12&gt;</code> classes.</p>
+                <p>Set image width with <code>&lt;span1&gt;...&lt;span12&gt;</code> classes.</p>
                 <div class="example">
-                    <img src="images/2.jpg" class="span2">
-                    <img src="images/2.jpg" class="span3">
-                    <img src="images/2.jpg" class="span4">
+                    <img src="{{ site.baseurl }}images/2.jpg" class="span2">
+                    <img src="{{ site.baseurl }}images/2.jpg" class="span3">
+                    <img src="{{ site.baseurl }}images/2.jpg" class="span4">
                 </div>
 <pre class="prettyprint linenums">
 &lt;img src="..." class="span2"&gt;
@@ -71,23 +71,23 @@ slug: images
 
                 <h3>Image container</h3>
                 <p class="description">
-                    You can use class <code>.image-container</code> to create additional image presentation.
+                    Use <code>.image-container</code> class to create additional image presentation.
                 </p>
                 <div class="example">
                     <div class="image-container">
-                        <img src="images/2.jpg">
+                        <img src="{{ site.baseurl }}images/2.jpg">
                         <div class="overlay">
-                            Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                            Lorem Ipsum is dummy text of the printing and typesetting industry.
                         </div>
                     </div>
                     <div class="image-container shadow">
-                        <img src="images/2.jpg">
+                        <img src="{{ site.baseurl }}images/2.jpg">
                         <div class="overlay-fluid">
-                            Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                            Lorem Ipsum is dummy text of the printing and typesetting industry.
                         </div>
                     </div>
                     <div class="image-container selected">
-                        <img src="images/2.jpg">
+                        <img src="{{ site.baseurl }}images/2.jpg">
                     </div>
                 </div>
 <pre class="prettyprint linenums">
