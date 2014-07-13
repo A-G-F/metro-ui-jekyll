@@ -45,7 +45,7 @@ module.exports = function(grunt) {
                 banner: '<%= banner %><%= jqueryCheck %>',
                 stripBanners: false
             },
-            bootstrap: {
+            bootstrap: { // comment out elements you don't need
                 src: [
                     'js/metro/metro-global.js',
                     'js/metro/metro-core.js',
