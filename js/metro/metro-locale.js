@@ -30,7 +30,7 @@
             buttons: [
                 "Aujourd'hui", "Effacer", "Annuler", "Aide", "Précedent", "Suivant", "Fin"
             ]
-        },/*
+        },
         'nl': {
             months: [
                 "Januari", "Februari", "Maart", "April", "Mei", "Juni", "Juli", "Augustus", "September", "Oktober", "November", "December",
@@ -69,8 +69,8 @@
             buttons: [
                 "Сегодня", "Очистить", "Отменить", "Помощь", "Назад", "Вперед", "Готово"
             ]
-        },*/
-        /** By NoGrief (nogrief@gmail.com) *
+        },
+        /* By NoGrief (nogrief@gmail.com) */
         'zhCN': {
             months: [
                 "一月", "二月", "三月", "四月", "五月", "六月", "七月", "八月", "九月", "十月", "十一月", "十二月",
@@ -83,7 +83,7 @@
             buttons: [
                 "今日", "清除", "Cancel", "Help", "Prior", "Next", "Finish"
             ]
-        },*/
+        },
         'it': {
             months: [
                 'Gennaio', 'Febbraio', 'Marzo', 'Aprile', 'Maggio', 'Giugno', 'Luglio', 'Agosto', 'Settembre', 'Ottobre', 'Novembre', 'Dicembre',
@@ -110,7 +110,7 @@
                 "Heute", "Zurücksetzen", "Abbrechen", "Hilfe", "Früher", "Später", "Fertig"
             ]
         },
-        /** By Javier Rodríguez (javier.rodriguez at fjrodriguez.com) */
+        /* By Javier Rodríguez (javier.rodriguez at fjrodriguez.com) */
         'es': {
             months: [
                 "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre",

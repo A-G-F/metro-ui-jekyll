@@ -1,0 +1,51 @@
+// Posts list
+.postslist {
+
+  .tile {
+    float: left!important;
+    display: inline-block;
+    margin: 0 10px 0 -20px;
+    background-color: @cyan;
+
+    div {
+      text-align: center;
+      color: @white;
+      width: 100%;
+      display: block;
+      position: absolute;
+
+    }
+
+    div:first-child {
+      top: 0;
+      font-size: 0.5em;
+    }
+
+    div:nth-child(2) {
+      top: 2px;
+      height: 100%;
+      font-size: 2em;
+      font-weight: bold;
+      opacity: 0.5;
+    }
+
+    div:last-child {
+      border-top: 1px solid @white;
+      bottom: 0;
+      font-size: 0.7em;
+    }
+  }
+
+  h2 {
+    color: @blue;
+    margin: 12px 0;
+    padding-bottom: 5px;
+    white-space: nowrap;
+    overflow-x: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
+#latest {
+    margin-top: 30px;
+}

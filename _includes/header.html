@@ -16,7 +16,7 @@
                                 <ul class="dropdown-menu dark" data-role="dropdown">
                                     <li><a href="{{ site.baseurl }}documentation/global.html">Global styles</a></li>
                                     <li><a href="{{ site.baseurl }}documentation/grid.html">Grid system</a></li>
-                                    <div class="divider"></div>
+                                    <li class="divider"></li>
                                     <li><a href="{{ site.baseurl }}documentation/typography.html">Typography</a></li>
                                     <li><a href="{{ site.baseurl }}documentation/tables.html">Tables</a></li>
                                     <li><a href="{{ site.baseurl }}documentation/forms.html">Forms</a></li>
@@ -114,7 +114,7 @@
                     </li> -->
                     {% if page.slug == "examples" %}
                     <li>
-                        <a href="#" class="dropdown-toggle fg-yellow">Examples</a>
+                        <a href="#" class="dropdown-toggle">Examples</a>
                         <ul class="dropdown-menu dark" data-role="dropdown">
                             <li>
                                 <a href="#" class="dropdown-toggle">General</a>
@@ -168,10 +168,10 @@
                         </ul>
                     </li>
                     {% else %}
-                    <li>
-                        <a href="{{ site.baseurl }}documentation/examples.html#" class="fg-yellow">Examples</a>
-                    </li>
+                    <li><a href="{{ site.baseurl }}documentation/examples.html#">Examples</a></li>
                     {% endif %}
+                    <li class="divider"></li>
+                    <li><a href="{{ site.baseurl }}blog.html" class="fg-yellow">Blog</a></li>
                 </ul>
 
                 <div class="no-tablet-portrait no-phone">

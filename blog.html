@@ -1,0 +1,31 @@
+---
+layout: standard
+title: "Blog"
+slug: blog
+---
+    <div class="container">
+        <h1>
+            <a href="#" class="history-back"><i class="icon-arrow-left-3 fg-darker smaller"></i></a>
+            Blog Posts
+        </h1>
+        <div class="listview-outlook postslist">
+            {% for post in site.posts %}
+            <a href="{{ post.url }}" class="list">
+                <div class="list-content">
+                    <div class="tile half">
+                        <div>
+                            {{ post.date | date: "%B" }}
+                        </div>
+                        <div>
+                            {{ post.date | date: "%-d" }}
+                        </div>
+                        <div>
+                            {{ post.date | date: "%Y" }}
+                        </div>
+                    </div>
+                    <h2>{{ post.title }}</h2>
+                </div>
+            </a>
+            {% endfor %}
+        </div>
+    </div>
