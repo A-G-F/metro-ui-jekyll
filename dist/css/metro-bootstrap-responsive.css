@@ -382,6 +382,10 @@
   .navbar .pull-menu {
     display: block !important;
   }
+  #latest,
+  #related {
+    margin-top: 30px!important;
+  }
 }
 
 /* Phones landscape*/

@@ -2,9 +2,8 @@
 <html lang="{{ site.locale }}">
 <head>
     <meta charset="utf-8">
-{% if page.slug != "start-screen" %}
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-{% endif %}
+
     <meta name="generator" content="{{ site.ghname }}">
     <meta name="description" content="Windows 8 UI for GitHub pages">
     <meta name="author" content="{{ site.ghauthor }}">
@@ -13,15 +12,8 @@
     <link href="{{ site.baseurl }}css/metro-bootstrap-responsive.min.css" rel="stylesheet">
     <link href="{{ site.baseurl }}css/iconFont.min.css" rel="stylesheet">
 
-{% if page.slug == "test-page" %}
-    <style>
-        .grid .row [class*="span"] {padding: 20px; text-align: right}
-    </style>
-{% endif %}
-{% if page.slug != "template-news-portal" %}
     <link href="{{ site.baseurl }}css/docs.min.css" rel="stylesheet">
     <link href="{{ site.baseurl }}js/prettify/prettify.css" rel="stylesheet">
-{% endif %}
 
     <!-- Load JavaScript Libraries -->
     <script src="{{ site.baseurl }}js/jquery/jquery.min.js"></script>
@@ -30,54 +22,59 @@
 {% if page.slug == "tiles" %}
     <script src="{{ site.baseurl }}js/jquery/jquery.easing.1.3.min.js"></script>
 {% endif %}
-{% if page.slug == "dataTables" %}
-    <script src="{{ site.baseurl }}js/jquery/jquery.dataTables.js"></script>
-{% endif %}
     <script src="{{ site.baseurl }}js/prettify/prettify.js"></script>
-{% if page.slug == "tiles" or page.slug == "images" or page.slug == "examples" or page.slug == "template-news-portal" %}
-    <script src="{{ site.baseurl }}js/holder/holder.js"></script>
-{% endif %}
 
     <!-- Metro UI CSS JavaScript plugins -->
     <script src="{{ site.baseurl }}js/metro.min.js"></script>
-{% if page.slug != "template-news-portal" %}
+
     <!-- Local JavaScript -->
     <script src="{{ site.baseurl }}js/docs.js"></script>
     <script src="{{ site.baseurl }}js/github.info.js"></script>
-{% endif %}
-
-{% if page.slug == "datepicker" %}
-    <script>
-        METRO_LOCALE = '{{ site.locale }}';
-    </script>
-{% endif %}
-{% if page.slug == "calendar" %}
-    <script>
-        METRO_LOCALE = '{{ site.locale }}';
-        METRO_WEEK_START = 1;
-    </script>
-{% endif %}
-{% if page.slug == "start-screen" %}
-    <script src="{{ site.baseurl }}js/start-screen.js"></script>
-{% endif %}
 
     <title>Metro UI 4 Jekyll : {{ page.title }}</title>
 </head>
 
-{% if page.slug == "index" %}
-<body style="background-color: #efefef">
-{% else %}
 <body>
-{% endif %}
 
-{% if page.slug != "start-screen" and page.slug != "template-news-portal" %}
 {% include header.html %}
-{% endif %}
 
-{{ content }}
+    <div class="container grid">
+        <div class="row">
+            <div id="post" class="span8">
+                {{ content }}
+            </div>
 
-{% if page.slug != "index" and page.slug != "start-screen" %}
+            <div id="related" class="span4">
+                <h2>Related Posts</h2>
+                <div class="listview-outlook">
+                    {% for post in site.related_posts limit:3 %}
+                    <a href="{{ post.url }}" class="list">
+                        <div class="list-content">
+                            <span class="list-title fg-blue">{{ post.title }}</span>
+                            <span class="list-remark">{{ post.date | date_to_string }}</span>
+                        </div>
+                    </a>
+                    {% endfor %}
+                </div>
+            </div>
+
+            <div id="latest" class="span4">
+                <h2>Latest Posts</h2>
+                <div class="listview-outlook">
+                    {% for post in site.posts limit:12 %}
+                    <a href="{{ post.url }}" class="list">
+                        <div class="list-content">
+                            <span class="list-title fg-blue">{{ post.title }}</span>
+                            <span class="list-remark">{{ post.date | date_to_string }}</span>
+                        </div>
+                    </a>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+
 {% include footer.html %}
-{% endif %}
+
 </body>
 </html>

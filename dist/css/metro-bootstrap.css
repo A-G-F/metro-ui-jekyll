@@ -10030,6 +10030,53 @@ hr {
   border: 0;
 }
 
+.postslist .tile {
+  display: inline-block;
+  float: left!important;
+  margin: 0 10px 0 -20px;
+  background-color: #1ba1e2;
+}
+
+.postslist .tile div {
+  position: absolute;
+  display: block;
+  width: 100%;
+  color: #ffffff;
+  text-align: center;
+}
+
+.postslist .tile div:first-child {
+  top: 0;
+  font-size: 0.5em;
+}
+
+.postslist .tile div:nth-child(2) {
+  top: 2px;
+  height: 100%;
+  font-size: 2em;
+  font-weight: bold;
+  opacity: 0.5;
+}
+
+.postslist .tile div:last-child {
+  bottom: 0;
+  font-size: 0.7em;
+  border-top: 1px solid #ffffff;
+}
+
+.postslist h2 {
+  padding-bottom: 5px;
+  margin: 12px 0;
+  overflow-x: hidden;
+  color: #4390df;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+#latest {
+  margin-top: 30px;
+}
+
 .bg-black {
   background-color: #000000 !important;
 }
