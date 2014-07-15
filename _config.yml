@@ -2,7 +2,6 @@
 markdown:         rdiscount
 pygments:         true
 relative_permalinks: true
-permalink:        /metro-ui-jekyll/blog/:year/:month/:day/:title.html
 destination:      ./_gh_pages
 exclude:          [".idea", ".editorconfig", ".gitignore", "bower.json", "composer.json", "CONTRIBUTING.md", "CNAME", "LICENSE",
                   "Gruntfile.js", "package.json", "node_modules", "README.md", "dist", "less", "metro",
