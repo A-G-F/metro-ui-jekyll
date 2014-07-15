@@ -1,4 +1,6 @@
 # Server
+markdown:         rdiscount
+pygments:         true
 destination:      ./_gh_pages
 exclude:          [".idea", ".editorconfig", ".gitignore", "bower.json", "composer.json", "CONTRIBUTING.md", "CNAME", "LICENSE",
                   "Gruntfile.js", "package.json", "node_modules", "README.md", "dist", "less", "metro",
