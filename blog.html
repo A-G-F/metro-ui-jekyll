@@ -10,7 +10,7 @@ slug: blog
         </h1>
         <div class="listview-outlook postslist">
             {% for post in site.posts %}
-            <a href="{{ post.url }}" class="list">
+            <a href="{{ site.baseurl }}{{ post.url }}" class="list">
                 <div class="list-content">
                     <div class="tile half">
                         <div>
