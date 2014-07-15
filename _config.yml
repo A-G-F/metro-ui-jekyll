@@ -16,7 +16,7 @@ ghauthor:         "A-G-F"
 ghproject:        "metro-ui-jekyll"
 ghname:           "Metro UI 4 Jekyll"
 locale:           "en"
-ga-acc:           "" # your Google Analytics tracking No., e.g.  UA-123456789-1
+ga-acc:           "UA-2732939-9" # your Google Analytics tracking No., e.g.  UA-123456789-1
 
 defaults:
   -
