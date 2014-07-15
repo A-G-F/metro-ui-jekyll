@@ -1,5 +1,6 @@
 ---
 layout: post
+category: blog
 title: Maintain a Jekyll site with WebStorm
 ---
 
