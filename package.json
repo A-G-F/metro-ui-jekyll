@@ -1,7 +1,7 @@
 {
     "name": "metro-ui-jekyll"
   , "description": "A port of Metro UI CSS made for Jekyll"
-  , "version": "2.0.31"
+  , "version": "2.0.32"
   , "keywords": ["metro-ui", "metro ui", "css", "jekyll"]
   , "homepage": "http://a-g-f.github.com/metro-ui-jekyll/"
   , "author": "A-G-F"

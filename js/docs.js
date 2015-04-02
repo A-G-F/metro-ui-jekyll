@@ -6,6 +6,8 @@ $(function(){
 
     window.prettyPrint && prettyPrint();
 
+    $("#post > h1").prepend('<a href="#" class="history-back"><i class="icon-arrow-left-3 fg-darker smaller"></i></a> ');
+
     $(".history-back").on("click", function(e){
         e.preventDefault();
         history.back();

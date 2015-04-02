@@ -14,7 +14,7 @@ module.exports = function(grunt) {
             ' * Metro UI 4 Jekyll v<%= pkg.version %> (<%= pkg.homepage %>)\n' +
             ' * <%= pkg.description %> maintained by Alfred G. Fischer\n' +
             ' * Metro UI CSS Copyright 2012-<%= grunt.template.today("yyyy") %> Sergey Pimenov\n' +
-            ' * Metro UI 4 Jekyll Copyright 2014 Alfred G. Fischer\n' +
+            ' * Metro UI 4 Jekyll Copyright 2014-<%= grunt.template.today("yyyy") %> Alfred G. Fischer\n' +
             ' * Both licensed under <%= _.pluck(pkg.licenses, "url").join(", ") %>\n' +
             ' */\n\n',
 
@@ -81,6 +81,7 @@ module.exports = function(grunt) {
                     'js/metro/metro-wizard.js',
                     'js/metro/metro-panel.js',
                     'js/metro/metro-tile-transform.js',
+                    'js/metro/metro-popover.js',
                     'js/metro/metro-initiator.js'
                 ],
                 dest: 'dist/js/metro.js'

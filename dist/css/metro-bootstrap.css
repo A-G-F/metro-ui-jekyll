@@ -1,8 +1,8 @@
 /*!
- * Metro UI 4 Jekyll v2.0.31 (http://a-g-f.github.com/metro-ui-jekyll/)
+ * Metro UI 4 Jekyll v2.0.32 (http://a-g-f.github.com/metro-ui-jekyll/)
  * A port of Metro UI CSS made for Jekyll maintained by Alfred G. Fischer
- * Metro UI CSS Copyright 2012-2014 Sergey Pimenov
- * Metro UI 4 Jekyll Copyright 2014 Alfred G. Fischer
+ * Metro UI CSS Copyright 2012-2015 Sergey Pimenov
+ * Metro UI 4 Jekyll Copyright 2014-2015 Alfred G. Fischer
  * Both licensed under http://opensource.org/licenses/MIT
  */
 
@@ -728,28 +728,28 @@ a {
   font-family: "PT Serif Caption";
   font-style: normal;
   font-weight: 400;
-  src: local("Cambria"), local("PT Serif Caption"), local("PTSerif-Caption"), url(https://themes.googleusercontent.com/static/fonts/ptserifcaption/v4/7xkFOeTxxO1GMC1suOUYWWhBabBbEjGd1iRmpyoZukE.woff) format('woff');
+  src: local("Cambria"), local("PT Serif Caption"), local("PTSerif-Caption"), url(https://themes.googleusercontent.com/static/fonts/ptserifcaption/v6/7xkFOeTxxO1GMC1suOUYWWhBabBbEjGd1iRmpyoZukE.woff) format('woff');
 }
 
 @font-face {
   font-family: "Open Sans Light";
   font-style: normal;
   font-weight: 300;
-  src: local("Segoe UI Light"), local("Open Sans Light"), local("OpenSans-Light"), url(https://themes.googleusercontent.com/static/fonts/opensans/v6/DXI1ORHCpsQm3Vp6mXoaTZ1r3JsPcQLi8jytr04NNhU.woff) format('woff');
+  src: local("Segoe UI Light"), local("Open Sans Light"), local("OpenSans-Light"), url(https://themes.googleusercontent.com/static/fonts/opensans/v8/DXI1ORHCpsQm3Vp6mXoaTZ1r3JsPcQLi8jytr04NNhU.woff) format('woff');
 }
 
 @font-face {
   font-family: "Open Sans";
   font-style: normal;
   font-weight: 400;
-  src: local("Segoe UI"), local("Open Sans"), local("OpenSans"), url(https://themes.googleusercontent.com/static/fonts/opensans/v6/K88pR3goAWT7BTt32Z01mz8E0i7KZn-EPnyo3HZu7kw.woff) format('woff');
+  src: local("Segoe UI"), local("Open Sans"), local("OpenSans"), url(https://themes.googleusercontent.com/static/fonts/opensans/v8/K88pR3goAWT7BTt32Z01mz8E0i7KZn-EPnyo3HZu7kw.woff) format('woff');
 }
 
 @font-face {
   font-family: "Open Sans Bold";
   font-style: normal;
   font-weight: 700;
-  src: local("Segoe UI Bold"), local("Open Sans Bold"), local("OpenSans-Bold"), url(https://themes.googleusercontent.com/static/fonts/opensans/v6/k3k702ZOKiLJc3WVjuplzJ1r3JsPcQLi8jytr04NNhU.woff) format('woff');
+  src: local("Segoe UI Bold"), local("Open Sans Bold"), local("OpenSans-Bold"), url(https://themes.googleusercontent.com/static/fonts/opensans/v8/k3k702ZOKiLJc3WVjuplzJ1r3JsPcQLi8jytr04NNhU.woff) format('woff');
 }
 
 .text-rest-state {
@@ -2872,7 +2872,7 @@ button.mini {
   left: -1em;
   margin-top: -1.5em;
   margin-left: 1px;
-  border-color: #ddd #ddd #ddd transparent;
+  border-color: #d9d9d9 #d9d9d9 #d9d9d9 transparent;
   border-style: solid;
   border-width: 1.5em 0 1.5em 1em;
   content: "";
@@ -2886,7 +2886,7 @@ button.mini {
   margin-right: 1px;
   border-top: 1.5em solid transparent;
   border-bottom: 1.5em solid transparent;
-  border-left: 1em solid #ddd;
+  border-left: 1em solid #d9d9d9;
   content: "";
 }
 
@@ -4662,10 +4662,14 @@ img.polaroid {
   background: #555555;
 }
 
+.dropdown-toggle {
+  padding-right: 20px !important;
+}
+
 .dropdown-toggle:after {
   position: absolute;
   bottom: 0;
-  margin-left: .45em;
+  margin-left: .25em;
   font-family: metroSysIcons;
   font-size: .7em;
   content: '\e001';
@@ -4673,6 +4677,10 @@ img.polaroid {
 
 .dropdown-toggle.no-marker:after {
   content: "";
+}
+
+.dropdown-toggle.without-icon:after {
+  content: "" !important;
 }
 
 .contextmenu {
@@ -4746,6 +4754,7 @@ img.polaroid {
 .navbar .navigation-bar-content .element,
 .navigation-bar .navbar-content .element,
 .navbar .navbar-content .element {
+  position: relative;
   padding: 15px;
   font-family: 'Segoe UI Light_', 'Open Sans Light', Verdana, Arial, Helvetica, sans-serif;
   font-size: 14px;
@@ -4765,6 +4774,8 @@ img.polaroid {
 .navigation-bar .navbar-content .element > a.dropdown-toggle,
 .navbar .navbar-content .element > a.dropdown-toggle {
   position: relative;
+  padding-right: 5px !important;
+  margin-right: 5px;
   color: inherit;
 }
 
@@ -4774,6 +4785,7 @@ img.polaroid {
 .navbar .navbar-content .element > a.dropdown-toggle:after {
   position: absolute;
   left: 100%;
+  margin-left: 0;
 }
 
 .navigation-bar .navigation-bar-content .element > .dropdown-menu,
@@ -4954,7 +4966,7 @@ img.polaroid {
   top: 50%;
   left: 95%;
   margin-top: -5px;
-  margin-left: -7px;
+  margin-left: -12px;
 }
 
 .navigation-bar .element-menu > li > .dropdown-menu,
@@ -4967,6 +4979,11 @@ img.polaroid {
 .navbar .element-menu > li > .dropdown-menu.place-right {
   right: 0;
   left: auto;
+}
+
+.navigation-bar .element-menu > li:hover,
+.navbar .element-menu > li:hover {
+  background-color: #00aafd;
 }
 
 .navigation-bar .element-menu.drop-up li > .dropdown-menu,
@@ -8774,6 +8791,172 @@ p [data-hint] {
 }
 
 .hint.right:after {
+  left: -10px;
+  border-right: 10px solid;
+}
+
+.hint2 {
+  position: fixed;
+  z-index: 1030;
+  display: none;
+  width: auto;
+  max-width: 220px;
+  padding: 10px;
+  margin-top: 10px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 12px;
+  color: #1d1d1d;
+  border: 1px solid;
+  border-color: #6a6a6a;
+}
+
+.hint2 .hint-title,
+.hint2 .hint-text {
+  color: inherit;
+  text-align: left;
+}
+
+.hint2 .hint-title {
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+.hint2:before,
+.hint2:after {
+  position: absolute;
+  width: 0;
+  height: 0;
+  content: '';
+}
+
+.hint2:before {
+  z-index: 2;
+}
+
+.hint2:after {
+  z-index: 1;
+  border-color: inherit;
+}
+
+.hint2.bottom:before,
+.hint2.bottom:after {
+  top: 1px;
+  left: 5px;
+  margin: -10px 0;
+  border-right: 5px solid transparent;
+  border-bottom: 10px solid #fffcc0;
+  border-left: 5px solid transparent;
+}
+
+.hint2.bottom:after {
+  top: 0;
+  border-bottom: 10px solid;
+}
+
+.hint2.top:before,
+.hint2.top:after {
+  top: 100%;
+  left: 5px;
+  margin-top: -1px;
+  border-top: 10px solid #fffcc0;
+  border-right: 5px solid transparent;
+  border-left: 5px solid transparent;
+}
+
+.hint2.top:after {
+  margin-top: 1px;
+  border-top: 10px solid;
+}
+
+.hint2.left:before,
+.hint2.left:after {
+  top: 5px;
+  left: 100%;
+  margin-left: -1px;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-left: 10px solid #fffcc0;
+}
+
+.hint2.left:after {
+  margin-left: 0;
+  border-left: 10px solid;
+}
+
+.hint2.right:before,
+.hint2.right:after {
+  top: 5px;
+  left: -9px;
+  margin: 0;
+  border-top: 5px solid transparent;
+  border-right: 10px solid #fffcc0;
+  border-bottom: 5px solid transparent;
+}
+
+.hint2.right:after {
+  left: -10px;
+  border-right: 10px solid;
+}
+
+.hint2.bottom:before,
+.hint2.bottom:after {
+  top: 1px;
+  left: 50%;
+  margin: -10px 0 0 -5px;
+  border-right: 5px solid transparent;
+  border-bottom: 10px solid #fffcc0;
+  border-left: 5px solid transparent;
+}
+
+.hint2.bottom:after {
+  top: 0;
+  border-bottom: 10px solid;
+}
+
+.hint2.top:before,
+.hint2.top:after {
+  top: 100%;
+  left: 50%;
+  margin-top: -1px;
+  margin-left: -5px;
+  border-top: 10px solid #fffcc0;
+  border-right: 5px solid transparent;
+  border-left: 5px solid transparent;
+}
+
+.hint2.top:after {
+  margin-top: 1px;
+  border-top: 10px solid;
+}
+
+.hint2.left:before,
+.hint2.left:after {
+  top: 50%;
+  left: 100%;
+  margin-top: -5px;
+  margin-left: -1px;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-left: 10px solid #fffcc0;
+}
+
+.hint2.left:after {
+  margin-left: 0;
+  border-left: 10px solid;
+}
+
+.hint2.right:before,
+.hint2.right:after {
+  top: 50%;
+  left: -9px;
+  margin: 0;
+  margin-top: -5px;
+  border-top: 5px solid transparent;
+  border-right: 10px solid #fffcc0;
+  border-bottom: 5px solid transparent;
+}
+
+.hint2.right:after {
   left: -10px;
   border-right: 10px solid;
 }
