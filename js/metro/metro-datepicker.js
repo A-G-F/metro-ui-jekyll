@@ -3,7 +3,7 @@
 (function( $ ) {
     $.widget("metro.datepicker", {
 
-        version: "1.0.0",
+        version: "1.0.1",
 
         options: {
             format: "dd.mm.yyyy",
@@ -35,6 +35,7 @@
             this._createCalendar(element, this.options.date);
 
             input.attr('readonly', true);
+            button.attr('type', 'button');
 
             button.on('click', function(e){
                 e.stopPropagation();

@@ -1,8 +1,8 @@
 /*!
- * Metro UI 4 Jekyll v2.0.31 (http://a-g-f.github.com/metro-ui-jekyll/)
+ * Metro UI 4 Jekyll v2.0.32 (http://a-g-f.github.com/metro-ui-jekyll/)
  * A port of Metro UI CSS made for Jekyll maintained by Alfred G. Fischer
- * Metro UI CSS Copyright 2012-2014 Sergey Pimenov
- * Metro UI 4 Jekyll Copyright 2014 Alfred G. Fischer
+ * Metro UI CSS Copyright 2012-2015 Sergey Pimenov
+ * Metro UI 4 Jekyll Copyright 2014-2015 Alfred G. Fischer
  * Both licensed under http://opensource.org/licenses/MIT
  */
 
@@ -85,7 +85,7 @@ $(function(){
             buttons: [
                 "Aujourd'hui", "Effacer", "Annuler", "Aide", "Précedent", "Suivant", "Fin"
             ]
-        },/*
+        },
         'nl': {
             months: [
                 "Januari", "Februari", "Maart", "April", "Mei", "Juni", "Juli", "Augustus", "September", "Oktober", "November", "December",
@@ -124,8 +124,8 @@ $(function(){
             buttons: [
                 "Сегодня", "Очистить", "Отменить", "Помощь", "Назад", "Вперед", "Готово"
             ]
-        },*/
-        /** By NoGrief (nogrief@gmail.com) *
+        },
+        /* By NoGrief (nogrief@gmail.com) */
         'zhCN': {
             months: [
                 "一月", "二月", "三月", "四月", "五月", "六月", "七月", "八月", "九月", "十月", "十一月", "十二月",
@@ -138,7 +138,7 @@ $(function(){
             buttons: [
                 "今日", "清除", "Cancel", "Help", "Prior", "Next", "Finish"
             ]
-        },*/
+        },
         'it': {
             months: [
                 'Gennaio', 'Febbraio', 'Marzo', 'Aprile', 'Maggio', 'Giugno', 'Luglio', 'Agosto', 'Settembre', 'Ottobre', 'Novembre', 'Dicembre',
@@ -165,7 +165,7 @@ $(function(){
                 "Heute", "Zurücksetzen", "Abbrechen", "Hilfe", "Früher", "Später", "Fertig"
             ]
         },
-        /** By Javier Rodríguez (javier.rodriguez at fjrodriguez.com) */
+        /* By Javier Rodríguez (javier.rodriguez at fjrodriguez.com) */
         'es': {
             months: [
                 "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre",
@@ -177,6 +177,45 @@ $(function(){
             ],
             buttons: [
                "Hoy", "Limpiar", "Cancel", "Help", "Prior", "Next", "Finish"
+            ]
+        },
+        'pt': {
+            months: [
+                'Janeiro','Fevereiro','Março','Abril','Maio','Junho','Julho','Agosto','Setembro','Outubro','Novembro','Dezembro',
+                'Jan','Fev','Mar','Abr','Mai','Jun','Jul','Ago','Set','Out','Nov','Dez'
+            ],
+            days: [
+                'Domingo','Segunda-feira','Terça-feira','Quarta-feira','Quinta-feira','Sexta-feira','Sabado',
+                'Dom','Seg','Ter','Qua','Qui','Sex','Sab'
+            ],
+            buttons: [
+                "Hoje", "Limpar", "Cancelar", "Ajuda", "Anterior", "Seguinte", "Terminar"
+            ]
+        },
+        'pl': {
+            months: [
+                "Styczeń", "Luty", "Marzec", "Kwiecień", "Maj", "Czerwiec", "Lipiec", "Sierpień", "Wrzesień", "Październik", "Listopad", "Grudzień",
+                "Sty", "Lut", "Mar", "Kwi", "Maj", "Cze", "Lip", "Sie", "Wrz", "Paź", "Lis", "Gru"
+            ],
+            days: [
+                "Niedziela", "Poniedziałek", "Wtorek", "Środa", "Czwartek", "Piątek", "Sobota",
+                "Nd", "Pon", "Wt", "Śr", "Czw", "Pt", "Sob"
+            ],
+            buttons: [
+                "Dzisiaj", "Wyczyść", "Anuluj", "Pomoc", "Poprzedni", "Następny", "Koniec"
+            ]
+        },
+        'cs': {
+            months: [
+                "Leden", "Únor", "Březen", "Duben", "Květen", "Červen", "Červenec", "Srpen", "Září", "Říjen", "Listopad", "Prosinec",
+                "Led", "Ún", "Bř", "Dub", "Kvě", "Če", "Čer", "Srp", "Zá", "Ří", "Li", "Pro"
+            ],
+            days: [
+                "Neděle", "Pondělí", "Úterý", "Středa", "Čtvrtek", "Pátek", "Sobota",
+                "Ne", "Po", "Út", "St", "Čt", "Pá", "So"
+            ],
+            buttons: [
+                "Dnes", "Vyčistit", "Zrušit", "Pomoc", "Předešlý", "Další", "Dokončit"
             ]
         }
     };
@@ -254,7 +293,7 @@ if (hasTouch) {
 (function( $ ) {
     $.widget("metro.accordion", {
 
-        version: "1.0.0",
+        version: "1.0.1",
 
         options: {
             closeAny: true,
@@ -269,48 +308,61 @@ if (hasTouch) {
 
             if (element.data('closeany') != undefined) this.options.closeAny = element.data('closeany');
 
-            this._frames = element.children(".accordion-frame");
-
             this.init();
         },
 
         init: function(){
             var that = this;
 
-            this._frames.each(function(){
+            that.element.on('click', '.accordion-frame > .heading', function(e){
+                e.preventDefault();
+                e.stopPropagation();
+
+                if ($(this).attr('disabled') || $(this).data('action') == 'none') return;
+
+                if (that.options.closeAny) that._closeFrames();
+
+                var frame = $(this).parent(), content = frame.children('.content');
+                console.log(this);
+
+                if ($(content).is(":hidden")) {
+                    $(content).slideDown();
+                    $(this).removeClass("collapsed");
+                    that._trigger("frame", e, {frame: frame});
+                    that.options.open(frame);
+                } else {
+                    $(content).slideUp();
+                    $(this).addClass("collapsed");
+                }
+                that.options.action(frame);
+            });
+
+            var frames = this.element.children('.accordion-frame');
+
+
+            frames.each(function(){
                 var frame = this,
                     a = $(this).children(".heading"),
                     content = $(this).children(".content");
 
-                if ($(a).hasClass("active") && !$(a).attr('disabled') && $(a).data('action') != 'none') {
+                if ($(frame).hasClass("active") && !$(frame).attr('disabled') && $(frame).data('action') != 'none') {
                     $(content).show();
                     $(a).removeClass("collapsed");
                 } else {
                     $(a).addClass("collapsed");
                 }
-
-                a.on('click', function(e){
-                    e.preventDefault();
-                    if ($(this).attr('disabled') || $(this).data('action') == 'none') return;
-
-                    if (that.options.closeAny) that._closeFrames();
-
-                    if ($(content).is(":hidden")) {
-                        $(content).slideDown();
-                        $(this).removeClass("collapsed");
-                        that._trigger("frame", e, {frame: frame});
-                        that.options.open(frame);
-                    } else {
-                        $(content).slideUp();
-                        $(this).addClass("collapsed");
-                    }
-                    that.options.action(frame);
-                });
             });
+
         },
 
         _closeFrames: function(){
-            this._frames.children(".content").slideUp().parent().children('.heading').addClass("collapsed");
+            var frames = this.element.children('.accordion-frame');
+            $.each(frames, function(){
+                var frame = $(this);
+                frame.children('.heading').addClass('collapsed');
+                frame.children('.content').slideUp();
+            });
+            //this._frames.children(".content").slideUp().parent().children('.heading').addClass("collapsed");
         },
 
         _destroy: function(){},
@@ -992,7 +1044,7 @@ Date.prototype.format = function (mask, utc) {
 (function( $ ) {
     $.widget("metro.datepicker", {
 
-        version: "1.0.0",
+        version: "1.0.1",
 
         options: {
             format: "dd.mm.yyyy",
@@ -1024,6 +1076,7 @@ Date.prototype.format = function (mask, utc) {
             this._createCalendar(element, this.options.date);
 
             input.attr('readonly', true);
+            button.attr('type', 'button');
 
             button.on('click', function(e){
                 e.stopPropagation();
@@ -2780,7 +2833,7 @@ Date.prototype.format = function (mask, utc) {
 (function( $ ) {
     $.widget("metro.tabcontrol", {
 
-        version: "1.0.0",
+        version: "1.0.1",
 
         options: {
             effect: 'none',
@@ -2802,35 +2855,34 @@ Date.prototype.format = function (mask, utc) {
 
             this.init(tabs, frames);
 
-            tabs.each(function(){
+            element.on("click", ".tabs > li > a", function(e){
+                e.preventDefault();
+                e.stopPropagation();
 
-                var tab = $(this).children("a");
+                that.options.tabclick(this);
 
-                tab.on('click', function(e){
-                    e.preventDefault();
+                if ($(this).parent().hasClass('disabled')) {
+                    return false;
+                }
 
-                    that.options.tabclick(this);
+                element.children(".tabs").children("li").removeClass("active");
+                element.children(".frames").children(".frame").hide();
 
-                    if ($(this).parent().hasClass('disabled')) {
-                        return false;
-                    }
+                $(this).parent().addClass("active");
 
-                    tabs.removeClass("active");
-                    tab.parent("li").addClass("active");
+                var current_frame = $($(this).attr("href"));
+                switch (that.options.effect) {
+                    case 'slide': current_frame.slideDown(); break;
+                    case 'fade': current_frame.fadeIn(); break;
+                    default: current_frame.show();
+                }
 
-                    frames.hide();
-                    var current_frame = $(tab.attr("href"));
-                    switch (that.options.effect) {
-                        case 'slide': current_frame.slideDown(); break;
-                        case 'fade': current_frame.fadeIn(); break;
-                        default: current_frame.show();
-                    }
+                that._trigger('change', null, current_frame);
+                that.options.tabchange(this);
 
-                    that._trigger('change', null, current_frame);
-                    that.options.tabchange(this);
+                if (element_id != undefined) window.localStorage.setItem(element_id+"-current-tab", $(this).attr("href"));
 
-                    if (element_id != undefined) window.localStorage.setItem(element_id+"-current-tab", $(this).attr("href"));
-                });
+                return true;
             });
 
             if (this.options.activateStoredTab) this._activateStoredTab(tabs);
@@ -3450,7 +3502,7 @@ $(function(){
 		
 			if(this._notify != undefined) {
         	   	this._notify.hide('slow', function() {
-					this.remove();
+					$(this).remove();
 					_notifies.splice(_notifies.indexOf(this._notify), 1);
 				});
 				return this;
@@ -3662,13 +3714,14 @@ $(function(){
 (function( $ ) {
     $.widget("metro.hint", {
 
-        version: "1.0.0",
+        version: "1.0.1",
 
         options: {
             position: "bottom",
             background: '#FFFCC0',
             shadow: false,
             border: false,
+            mode: 1,
             _hint: undefined
         },
 
@@ -3678,15 +3731,18 @@ $(function(){
 
 
             this.element.on('mouseenter', function(e){
+                $(".hint, .hint2").remove();
                 that.createHint();
-                o._hint.stop().fadeIn();
+                //o._hint.stop().fadeIn();
+                o._hint.show();
                 e.preventDefault();
             });
 
             this.element.on('mouseleave', function(e){
-                o._hint.stop().fadeOut(function(){
-                    o._hint.remove();
-                });
+//                o._hint.stop().fadeOut(function(){
+//                    o._hint.remove();
+//                });
+                o._hint.hide().remove();
                 e.preventDefault();
             });
         },
@@ -3702,6 +3758,7 @@ $(function(){
             if (element.data('hintBackground') != undefined) o.background = element.data('hintBackground');
             if (element.data('hintShadow') != undefined) o.shadow = element.data('hintShadow');
             if (element.data('hintBorder') != undefined) o.border = element.data('hintBorder');
+            if (element.data('hintMode') != undefined) o.mode = element.data('hintMode');
 
             if (element[0].tagName == 'TD' || element[0].tagName == 'TH') {
                 var wrp = $("<div/>").css("display", "inline-block").html(element.html());
@@ -3713,7 +3770,14 @@ $(function(){
             var hint_text = hint.length > 1 ? hint[1] : hint[0];
 
             //_hint = $("<div/>").addClass("hint").appendTo(element.parent());
-            _hint = $("<div/>").addClass("hint").appendTo('body');
+
+            _hint = $("<div/>").appendTo('body');
+            if (o.mode == 2) {
+                _hint.addClass('hint2');
+            } else {
+                _hint.addClass('hint');
+            }
+
             if (hint_title) {
                 $("<div/>").addClass("hint-title").html(hint_title).appendTo(_hint);
             }
@@ -3728,23 +3792,24 @@ $(function(){
             //console.log(_hint);
 
             if (o.position == 'top') {
+                //console.log(element.offset().top - $(window).scrollTop()  - 20);
                 _hint.css({
                     top: element.offset().top - $(window).scrollTop() - _hint.outerHeight() - 20,
-                    left: element.offset().left - $(window).scrollLeft()
+                    left: o.mode == 2 ? element.offset().left + element.outerWidth()/2 - _hint.outerWidth()/2  - $(window).scrollLeft(): element.offset().left - $(window).scrollLeft()
                 });
             } else if (o.position == 'bottom') {
                 _hint.css({
                     top: element.offset().top - $(window).scrollTop() + element.outerHeight(),
-                    left: element.offset().left - $(window).scrollLeft()
+                    left: o.mode == 2 ? element.offset().left + element.outerWidth()/2 - _hint.outerWidth()/2  - $(window).scrollLeft(): element.offset().left - $(window).scrollLeft()
                 });
             } else if (o.position == 'right') {
                 _hint.css({
-                    top: element.offset().top - 10 - $(window).scrollTop(),
-                    left: element.offset().left + element.outerWidth() + 10 - $(window).scrollLeft()
+                    top: o.mode == 2 ? element.offset().top + element.outerHeight()/2 - _hint.outerHeight()/2 - $(window).scrollTop() - 10 : element.offset().top - 10 - $(window).scrollTop(),
+                    left: element.offset().left + element.outerWidth() + 15 - $(window).scrollLeft()
                 });
             } else if (o.position == 'left') {
                 _hint.css({
-                    top: element.offset().top - 10 - $(window).scrollTop(),
+                    top: o.mode == 2 ? element.offset().top + element.outerHeight()/2 - _hint.outerHeight()/2 - $(window).scrollTop() - 10 : element.offset().top - 10 - $(window).scrollTop(),
                     left: element.offset().left - _hint.outerWidth() - 10 - $(window).scrollLeft()
                 });
             }
@@ -4739,12 +4804,14 @@ $(function(){
 (function( $ ) {
     $.widget("metro.stepper", {
 
-        version: "1.0.0",
+        version: "1.0.1",
 
         options: {
             steps: 3,
             start: 1,
-            onStep: function(index, step){}
+            clickable: true,
+            onStep: function(index, step){},
+            onStepClick: function(index, step){}
         },
 
         _create: function(){
@@ -4754,8 +4821,18 @@ $(function(){
             if (element.data('start') != undefined) o.start = element.data('start');
 
             this._createStepper();
+            if (o.clickable) this._createEvents();
             this._positioningSteps();
             this._stepTo(o.start);
+        },
+
+        _createEvents: function(){
+            var that = this, element = this.element, o= this.options;
+            element.on('click', 'li', function(e){
+                var step = $(this).data('step');
+                o.onStepClick(step - 1, step);
+                element.trigger("stepclick", step);
+            });
         },
 
         _createStepper: function(){
@@ -4764,7 +4841,7 @@ $(function(){
 
             ul = $("<ul/>");
             for(i=0;i< o.steps;i++) {
-                li = $("<li/>").appendTo(ul);
+                li = $("<li/>").data('step', i + 1).appendTo(ul);
             }
             ul.appendTo(element);
         },
@@ -4797,6 +4874,10 @@ $(function(){
                     o.onStep(i+1, s);
                 }
             });
+        },
+
+        stepTo: function(step){
+            this._stepTo(step);
         },
 
         first: function(){
@@ -4833,6 +4914,7 @@ $(function(){
         },
 
         _destroy: function(){
+            this._stepper.remove();
         },
 
         _setOption: function(key, value){
@@ -4884,16 +4966,18 @@ $(window).resize(function(){
 (function( $ ) {
     $.widget("metro.wizard", {
 
-        version: "1.0.0",
+        version: "1.0.1",
 
         options: {
             stepper: true,
             stepperType: 'default',
+            stepperClickable: true,
+            startPage: 'default',
             locale: $.Metro.currentLocale,
             finishStep: 'default',
             buttons: {
                 cancel: true,
-                help: false,
+                help: true,
                 prior: true,
                 next: true,
                 finish: true
@@ -4903,7 +4987,8 @@ $(window).resize(function(){
             onPrior: function(page, wiz){return true;},
             onNext: function(page, wiz){return true;},
             onFinish: function(page, wiz){},
-            onPage: function(page, wiz){}
+            onPage: function(page, wiz){},
+            onStepClick: function(step){}
         },
 
         _stepper: undefined,
@@ -4919,12 +5004,23 @@ $(window).resize(function(){
             this._steps = steps;
 
             if (o.stepper) {
-                this._stepper = this._createStepper(steps.length).insertBefore(element.find('.steps'));
+                this._stepper = this._createStepper(steps.length)
+                    .insertBefore(element.find('.steps'))
+                    .stepper({
+                        clickable: o.stepperClickable
+                    }).on('stepclick', function(e, s){
+                        that.stepTo(s);
+                        o.onStepClick(s);
+                    });
             }
 
             if (element.data('locale') != undefined) o.locale = element.data('locale');
 
             this._createEvents();
+
+            var sp = (o.startPage != 'default' && parseInt(o.startPage) > 1) ? o.startPage : 1;
+            this.stepTo(sp);
+
             this.options.onPage(this._currentStep + 1, element);
         },
 
@@ -4949,29 +5045,110 @@ $(window).resize(function(){
                 var actions = $("<div/>").addClass("actions").appendTo(element);
                 var group_left = $("<div/>").addClass("group-left").appendTo(actions);
                 var group_right = $("<div/>").addClass("group-right").appendTo(actions);
+                var cancel_button, help_button, prior_button, next_button, finish_button;
 
                 if (o.buttons.cancel) {
-                    $("<button type='button'/>").addClass("btn-cancel").html($.Metro.Locale[o.locale].buttons[2]).appendTo(group_left).on('click', function(){
+                    cancel_button = $("<button type='button'/>").addClass("btn-cancel").html($.Metro.Locale[o.locale].buttons[2]);
+                    if (typeof o.buttons.cancel == "boolean") {
+                        cancel_button.appendTo(group_left);
+                    } else {
+                        if (o.buttons.cancel.title) {
+                            cancel_button.html(o.buttons.cancel.title);
+                        }
+                        if (o.buttons.cancel.cls) {
+                            cancel_button.addClass(o.buttons.cancel.cls);
+                        }
+                        if (o.buttons.cancel.group && o.buttons.cancel.group != "left") {
+                            cancel_button.appendTo(group_right);
+                        } else {
+                            cancel_button.appendTo(group_left);
+                        }
+                    }
+                    cancel_button.on('click', function(){
                         o.onCancel(that._currentStep+1, element);
                     });
                 }
                 if (o.buttons.help) {
-                    $("<button type='button'/>").addClass("btn-help").html($.Metro.Locale[o.locale].buttons[3]).appendTo(group_right).on('click', function(){
+                    help_button = $("<button type='button'/>").addClass("btn-help").html($.Metro.Locale[o.locale].buttons[3]);
+                    if (typeof o.buttons.help == "boolean") {
+                        help_button.appendTo(group_right);
+                    } else {
+                        if (o.buttons.help.title) {
+                            help_button.html(o.buttons.help.title);
+                        }
+                        if (o.buttons.help.cls) {
+                            help_button.addClass(o.buttons.help.cls);
+                        }
+                        if (o.buttons.help.group && o.buttons.help.group != "left") {
+                            help_button.appendTo(group_right);
+                        } else {
+                            help_button.appendTo(group_left);
+                        }
+                    }
+                    help_button.on('click', function(){
                         o.onHelp(that._currentStep+1, element);
                     });
                 }
                 if (o.buttons.prior) {
-                    $("<button type='button'/>").addClass("btn-prior").html($.Metro.Locale[o.locale].buttons[4]).appendTo(group_right).on('click', function(){
+                    prior_button = $("<button type='button'/>").addClass("btn-prior").html($.Metro.Locale[o.locale].buttons[4]);
+                    if (typeof o.buttons.prior == "boolean") {
+                        prior_button.appendTo(group_right);
+                    } else {
+                        if (o.buttons.prior.title) {
+                            prior_button.html(o.buttons.prior.title);
+                        }
+                        if (o.buttons.prior.cls) {
+                            prior_button.addClass(o.buttons.prior.cls);
+                        }
+                        if (o.buttons.prior.group && o.buttons.prior.group != "left") {
+                            prior_button.appendTo(group_right);
+                        } else {
+                            prior_button.appendTo(group_left);
+                        }
+                    }
+                    prior_button.on('click', function(){
                         if (o.onPrior(that._currentStep+1, element)) that.prior();
                     });
                 }
                 if (o.buttons.next) {
-                    $("<button type='button'/>").addClass("btn-next").html($.Metro.Locale[o.locale].buttons[5]).appendTo(group_right).on('click', function(){
+                    next_button = $("<button type='button'/>").addClass("btn-next").html($.Metro.Locale[o.locale].buttons[5]);
+                    if (typeof o.buttons.next == "boolean") {
+                        next_button.appendTo(group_right);
+                    } else {
+                        if (o.buttons.next.title) {
+                            next_button.html(o.buttons.next.title);
+                        }
+                        if (o.buttons.next.cls) {
+                            next_button.addClass(o.buttons.next.cls);
+                        }
+                        if (o.buttons.next.group && o.buttons.next.group != "left") {
+                            next_button.appendTo(group_right);
+                        } else {
+                            next_button.appendTo(group_left);
+                        }
+                    }
+                    next_button.on('click', function(){
                         if (o.onNext(that._currentStep+1, element)) that.next();
                     });
                 }
                 if (o.buttons.finish) {
-                    $("<button type='button' disabled/>").addClass("btn-finish").html($.Metro.Locale[o.locale].buttons[6]).appendTo(group_right).on('click', function(){
+                    finish_button = $("<button type='button'/>").addClass("btn-finish").html($.Metro.Locale[o.locale].buttons[6]);
+                    if (typeof o.buttons.finish == "boolean") {
+                        finish_button.appendTo(group_right);
+                    } else {
+                        if (o.buttons.finish.title) {
+                            finish_button.html(o.buttons.finish.title);
+                        }
+                        if (o.buttons.finish.cls) {
+                            finish_button.addClass(o.buttons.finish.cls);
+                        }
+                        if (o.buttons.finish.group && o.buttons.finish.group != "left") {
+                            finish_button.appendTo(group_right);
+                        } else {
+                            finish_button.appendTo(group_left);
+                        }
+                    }
+                    finish_button.on('click', function(){
                         o.onFinish(that._currentStep+1, element);
                     });
                 }
@@ -4982,18 +5159,29 @@ $(window).resize(function(){
             var new_step = this._currentStep + 1;
 
             if (new_step == this._steps.length) return false;
+
             this._currentStep = new_step;
             this._steps.hide();
             $(this._steps[new_step]).show();
 
             this.options.onPage(this._currentStep + 1, this.element);
-            this._stepper.stepper('next');
+            if (this._stepper != undefined) this._stepper.stepper('stepTo', this._currentStep + 1);
 
             var finish = parseInt(this.options.finishStep == 'default' ? this._steps.length - 1 : this.options.finishStep);
             if (new_step == finish) {
                 this.element.find('.btn-finish').attr('disabled', false);
             } else {
                 this.element.find('.btn-finish').attr('disabled', true);
+            }
+
+            if (new_step == this._steps.length - 1) {
+                this.element.find('.btn-next').attr('disabled', true);
+            } else {
+                this.element.find('.btn-next').attr('disabled', false);
+            }
+
+            if (new_step > 0) {
+                this.element.find('.btn-prior').attr('disabled', false);
             }
 
             return true;
@@ -5003,12 +5191,13 @@ $(window).resize(function(){
             var new_step = this._currentStep - 1;
 
             if (new_step < 0) return false;
+
             this._currentStep = new_step;
             this._steps.hide();
             $(this._steps[new_step]).show();
 
             this.options.onPage(this._currentStep + 1, this.element);
-            this._stepper.stepper('prior');
+            if (this._stepper != undefined) this._stepper.stepper('stepTo', this._currentStep + 1);
 
             var finish = parseInt(this.options.finishStep == 'default' ? this._steps.length - 1 : this.options.finishStep);
             if (new_step == finish) {
@@ -5017,7 +5206,48 @@ $(window).resize(function(){
                 this.element.find('.btn-finish').attr('disabled', true);
             }
 
+            if (new_step == 0) {
+                this.element.find('.btn-prior').attr('disabled', true);
+            } else {
+                this.element.find('.btn-prior').attr('disabled', false);
+            }
+
+            if (new_step < finish) {
+                this.element.find('.btn-next').attr('disabled', false);
+            }
+
             return true;
+        },
+
+        stepTo: function(step){
+            var new_step = step - 1;
+
+            if (new_step < 0) return false;
+            this._currentStep = new_step;
+            this._steps.hide();
+            $(this._steps[new_step]).show();
+
+            this.options.onPage(this._currentStep + 1, this.element);
+            if (this._stepper != undefined) this._stepper.stepper('stepTo', step);
+
+            var finish = parseInt(this.options.finishStep == 'default' ? this._steps.length - 1 : this.options.finishStep);
+            if (new_step == finish) {
+                this.element.find('.btn-finish').attr('disabled', false);
+            } else {
+                this.element.find('.btn-finish').attr('disabled', true);
+            }
+
+
+            console.log(new_step, finish);
+
+            this.element.find('.btn-next').attr('disabled', !(new_step < finish));
+            this.element.find('.btn-prior').attr('disabled', !(new_step > 0));
+
+            return true;
+        },
+
+        stepper: function(){
+            return this._stepper;
         },
 
         _destroy: function(){
@@ -5138,6 +5368,141 @@ $(window).resize(function(){
     })
 })( jQuery );
 
+(function( $ ) {
+    $.widget("metro.popover", {
+
+        version: "1.0.0",
+
+        options: {
+            popoverText: '',
+            popoverTimeout: 3000,
+            popoverPosition: 'top', //top, bottom, left, right
+            popoverBackground: 'bg-cyan',
+            popoverColor: 'fg-white',
+            popoverMode: 'none', //click, hover,
+            popoverShadow: true
+        },
+
+        popover: {},
+
+        _create: function(){
+            this.createPopover();
+        },
+
+        createPopover: function(){
+            var that = this, element,
+                o = this.options;
+
+            element = this.element;
+
+            $.each(element.data(), function(key, value){
+                try {
+                    o[key] = $.parseJSON(value);
+                } catch (e) {
+                    o[key] = value;
+                }
+            });
+
+            var popover, content_container, marker_class;
+
+            popover = $("<div/>").addClass("notice").appendTo('body').hide();
+            $("<div/>").appendTo(popover);
+
+            if (o.popoverShadow) {
+                popover.addClass("shadow");
+            }
+
+            if (o.popoverBackground) {
+                if (o.popoverBackground[0] == '#') popover.css('background-color', o.popoverBackground); else popover.addClass(o.popoverBackground);
+            }
+            if (o.popoverColor) {
+                if (o.popoverColor[0] == '#') popover.css('color', o.popoverColor); else popover.addClass(o.popoverColor);
+            }
+
+            switch (o.popoverPosition) {
+                case 'left': marker_class = 'marker-on-right'; break;
+                case 'right': marker_class = 'marker-on-left'; break;
+                case 'bottom': marker_class = 'marker-on-top'; break;
+                default: marker_class = 'marker-on-bottom';
+            }
+
+            popover.css({
+                position: 'fixed'
+            });
+
+            popover.addClass(marker_class);
+
+            this.popover = popover;
+
+            this.setText(o.popoverText);
+
+            element.on(o.popoverMode, function(e){
+                if (!popover.data('visible')) that.show();
+            });
+
+            $(window).scroll(function(){
+                //that.popover.hide();
+                if (that.popover.data('visible')) {
+                    that.setPosition();
+                }
+            });
+
+        },
+
+        setPosition: function(){
+            var o = this.options, popover = this.popover, element = this.element;
+
+            if (o.popoverPosition == 'top') {
+                popover.css({
+                    top: element.offset().top - $(window).scrollTop() - popover.outerHeight() - 10,
+                    left: element.offset().left + element.outerWidth()/2 - popover.outerWidth()/2  - $(window).scrollLeft()
+                });
+            } else if (o.popoverPosition == 'bottom') {
+                popover.css({
+                    top: element.offset().top - $(window).scrollTop() + element.outerHeight() + 10,
+                    left: element.offset().left + element.outerWidth()/2 - popover.outerWidth()/2  - $(window).scrollLeft()
+                });
+            } else if (o.popoverPosition == 'right') {
+                popover.css({
+                    top: element.offset().top + element.outerHeight()/2 - popover.outerHeight()/2 - $(window).scrollTop(),
+                    left: element.offset().left + element.outerWidth() - $(window).scrollLeft() + 10
+                });
+            } else if (o.popoverPosition == 'left') {
+                popover.css({
+                    top: element.offset().top + element.outerHeight()/2 - popover.outerHeight()/2 - $(window).scrollTop(),
+                    left: element.offset().left - popover.outerWidth() - $(window).scrollLeft() - 10
+                });
+            }
+            return this;
+        },
+
+        setText: function(text){
+            this.popover.children('div').html(text);
+        },
+
+        show: function(){
+            var o = this.options, popover = this.popover;
+
+            this.setPosition();
+
+            popover.fadeIn(function(){
+                popover.data('visible', true);
+                setTimeout(function(){
+                    popover.fadeOut(
+                        function(){popover.data('visible', false);}
+                    );
+                }, o.popoverTimeout)
+            });
+        },
+
+        _destroy: function(){
+        },
+
+        _setOption: function(key, value){
+            this._super('_setOption', key, value);
+        }
+    })
+})( jQuery );
 (function($){
     /*
      * Init or ReInit components
@@ -5357,6 +5722,14 @@ $(window).resize(function(){
         }
     };
 
+    $.Metro.initPopover = function(area){
+        if (area != undefined) {
+            $(area).find('[data-popover=popover]').popover();
+        } {
+            $('[data-popover=popover]').popover();
+        }
+    };
+
     $.Metro.initAll = function(area) {
         $.Metro.initAccordions(area);
         $.Metro.initButtonSets(area);
@@ -5384,6 +5757,7 @@ $(window).resize(function(){
         $.Metro.initPulls(area);
         $.Metro.initPanels(area);
         $.Metro.initTileTransform(area);
+        $.Metro.initPopover(area);
     }
 })(jQuery);
 

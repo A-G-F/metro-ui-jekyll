@@ -4,7 +4,7 @@ Metro UI 4 Jekyll is a port of [Metro UI CSS](http://metroui.org.ua) to create a
 
 ## Current Version
 
-### 2.0.31 <!--will follow Metro UI CSS releases we build on-->
+### 2.0.32 <!--will follow Metro UI CSS releases we build on-->
 
 See details of definition on [metroui.org.ua](http://metroui.org.ua)
 

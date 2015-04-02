@@ -10,6 +10,7 @@ slug: wizard
         </h1>
 
         <div class="example">
+            <h4>Default initialize</h4>
             <div class="wizard" id="wizard">
                 <div class="steps">
                     <div class="step">Page 1</div>
@@ -21,7 +22,8 @@ slug: wizard
             <script>
                 $(function(){
                     $('#wizard').wizard({
-                        locale: 'ru',
+                        locale: 'en',
+                        stepperClickable: false,
                         onCancel: function(){
                             $.Dialog({
                                 title: 'Wizard',
@@ -50,4 +52,197 @@ slug: wizard
                 });
             </script>
         </div>
+
+        <div class="example">
+            <h4>This wizard started from page number 3</h4>
+            <div class="wizard" id="wizard2">
+                <div class="steps">
+                    <div class="step">Page 1</div>
+                    <div class="step">Page 2</div>
+                    <div class="step">Page 3</div>
+                    <div class="step">Page 4</div>
+                    <div class="step">Page 5</div>
+                </div>
+            </div>
+
+            <script>
+                $(function(){
+                    $('#wizard2').wizard({
+                        locale: 'en',
+                        startPage: 3,
+                        stepperClickable: false
+                    });
+                });
+            </script>
+        </div>
+
+        <div class="example">
+            <h4>Switch page over click on stepper steps</h4>
+            <div class="wizard" id="wizard3">
+                <div class="steps">
+                    <div class="step">Page 1</div>
+                    <div class="step">Page 2</div>
+                    <div class="step">Page 3</div>
+                    <div class="step">Page 4</div>
+                    <div class="step">Page 5</div>
+                    <div class="step">Page 6</div>
+                    <div class="step">Page 7</div>
+                </div>
+            </div>
+
+            <script>
+                $(function(){
+                    $('#wizard3').wizard({
+                        locale: 'en',
+                        stepperClickable: true,
+                        onStepClick: function(step){
+                            // stepper steps click handler
+                        }
+                    });
+                });
+            </script>
+        </div>
+
+        <div class="example">
+            <h4>Customize buttons</h4>
+            <div class="wizard" id="wizard4">
+                <div class="steps">
+                    <div class="step">Page 1</div>
+                    <div class="step">Page 2</div>
+                    <div class="step">Page 3</div>
+                </div>
+            </div>
+
+            <script>
+                $(function(){
+                    $('#wizard4').wizard({
+                        locale: 'en',
+                        stepperClickable: false,
+                        buttons: {
+                            cancel: {
+                                show: true,
+                                title: "Cancel wizard",
+                                cls: "warning",
+                                group: "right"
+                            },
+                            help: {
+                                show: true,
+                                title: "Help Me!",
+                                cls: "button primary",
+                                group: "right"
+                            },
+                            prior: {
+                                show: true,
+                                title: "Previous page",
+                                group: "left",
+                                cls: "info"
+                            },
+                            next: {
+                                show: true,
+                                title: "Next page",
+                                group: "left",
+                                cls: "info"
+                            },
+                            finish: {
+                                show: true,
+                                title: "Finish step and Go!",
+                                group: "left",
+                                cls: "danger"
+                            }
+                        }
+                    });
+                });
+            </script>
+        </div>
+
+        <h3>Html definition</h3>
+
+
+<pre class="prettyprint linenums">
+&lt;div class="wizard" id="wizard"&gt;
+    &lt;div class="steps"&gt;
+        &lt;div class="step"&gt;Page 1&lt;/div&gt;
+        &lt;div class="step"&gt;Page 2&lt;/div&gt;
+        &lt;div class="step"&gt;Page 3&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</pre>
+
+
+        <h3>JavaScript</h3>
+
+
+<pre class="prettyprint linenums">
+$(function(){
+    $('#wizard').wizard({
+            stepper: true, // show stepper, see http://metroui.org.ua/stepper.html
+            stepperType: 'default', // stepper type, see http://metroui.org.ua/stepper.html
+            stepperClickable: false, // set to true if you can switch page over click on stepper
+            startPage: 'default', // if this value ne 'default' wizard started from this page
+            locale: $.Metro.currentLocale, //'en', 'ua', 'ru', ... more languages defined in metro-locale.js
+            finishStep: 'default', // 'default' - last page or int - number of page
+            buttons: { //show or hide buttons
+                cancel: true,
+                help: true,
+                prior: true,
+                next: true,
+                finish: true
+            },
+
+            // Buttons click methods, page change events
+            onCancel: function(page, wiz){...},
+            onHelp: function(page, wiz){...},
+            onPrior: function(page, wiz){...},
+            onNext: function(page, wiz){...},
+            onFinish: function(page, wiz){...},
+            onPage: function(page, wiz){...},
+            onStepClick: function(step){...}
+    });
+});
+</pre>
+
+
+        <h3>Customize buttons</h3>
+
+
+<pre class="prettyprint linenums">
+$(function(){
+    $('#wizard').wizard({
+        buttons: {
+            cancel: {
+                show: true,
+                title: "Cancel wizard",
+                cls: "warning",
+                group: "right"
+            },
+            help: {
+                show: true,
+                title: "Help Me!",
+                cls: "button primary",
+                group: "right"
+            },
+            prior: {
+                show: true,
+                title: "Previous page",
+                group: "left",
+                cls: "info"
+            },
+            next: {
+                show: true,
+                title: "Next page",
+                group: "left",
+                cls: "info"
+            },
+            finish: {
+                show: true,
+                title: "Finish step and Go!",
+                group: "left",
+                cls: "danger"
+            }
+        }
+    });
+});
+</pre>
+
+
     </div>
